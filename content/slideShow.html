@@ -1,0 +1,288 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+<title>Desktop Slideshow</title>
+<script type="text/javascript" src="exif.js"></script>
+<script type="text/javascript" src="exif_ie.js"></script>
+<script type="text/javascript">
+//var testFileName = window.location.pathname.replace(/[^\\\/]*.html$/, 'exif_test.in').replace(/^\//, '');
+//var testFileName = 'c:\\exif\\exif_test.in';
+var testFileName = 'c:\\WINDOWS\\Application Data\\Mozilla\\Firefox\\Profiles\\p2a9tp3t.default\\extensions\\exif_viewer@mozilla.doslash.org\\content\\exif_test.in';
+AlanSRaskin.ExifViewer.Base.exifasr_isMoz = false;
+
+function SlideShow() {
+	this.baseFolderName = 'D:\\My Documents\\My Pictures\\Europe - 2006\\';
+//	this.baseFolderName = 'C:\\Documents and Settings\\alanr\\My Documents\\PersonalBackup\\Europe - 2006\\';
+	this.interval = 300 * 1000;		// 300 seconds
+	this.mode = 'R';				// 'R' for for Random, 'I' for Incremental
+	this.showText = 'S';			// 'N' for No, 'S' for Short, 'F' for Full
+	this.textBGcolour = '#FFFFCC';
+	this.textColour = 'black';
+//	this.afterHours = 25 * 60;
+//	this.beforeHours = 0;
+	this.afterHours = 30 + 24*60;	// stop at 4:30pm
+	this.beforeHours = 30 + 8*60;	// restart at 8:30am 
+	this.reMatch = new RegExp('^' + 'Img.*\.jpg' + '$', 'i');
+	this.reUnmatch = new RegExp('tn', 'i'); 
+	this.transitionDuration = 5;	// seconds
+	this.transitionEffect = 23;
+/*
+	1 	Reveal from inside out				2 	Scroll in from outer parts
+	3 	Scroll out from center				4 	Scroll up from button
+	5 	Scroll down from top				6 	Scroll left to right
+	7 	Scroll right to left				8 	Vertical Blinds left to right
+	9 	Horizontal Blinds top to bottom		10 	Combination of 8 and 9
+	11 	Looks a lot like 8					12 	Comes in in pixels
+	13 	Scroll in from outer parts			14 	Scroll out from center
+	15 	Close from both top and bottom		16 	Open from center to top and bottom
+	17 	Diagonal roll from right to left	18 	Different angle diagonal roll right to left
+	19 	Number 17: the other way			20 	Number 18: the other way
+	21 	Random horizontal lines				22 	Random vertical lines
+	23 	Completely Random
+*/
+	this.screenWidth = window.screen.width;	// 1024;
+	this.screenHeight = window.screen.height;	// 768;
+
+	this.photoFiles = new Array();
+	this.orientationData = new Array();
+	this.widthData = new Array();
+	this.heightData = new Array();
+	this.photoCount = -1;
+	this.currentPhoto = -1;
+	this.previousPhoto = -1;
+	this.images = new Array();
+}
+
+function handleFolder(folderName, slideShow) {
+	// goes through the list of files in the folder, adds all the Img*.jpg files 
+	// which aren't thumbnails (tn) to the list of images, then does the same 
+	// for all subfolders
+	var fso = new ActiveXObject('Scripting.FileSystemObject');
+	var folder = fso.GetFolder(folderName);
+	var fileCollection = folder.Files;
+	for (var objEnum = new Enumerator(fileCollection) ; !objEnum.atEnd() ; objEnum.moveNext()) {
+		fileName = objEnum.item().Name;
+		if (fileName.match(slideShow.reMatch)  &&  !fileName.match(slideShow.reUnmatch)) {
+			slideShow.photoFiles.push(folderName + '\\' + fileName);
+		}
+	}
+
+	var folderCollection = folder.SubFolders;
+	for (var objEnum = new Enumerator(folderCollection) ; !objEnum.atEnd() ; objEnum.moveNext()) {
+		folderName = objEnum.item();
+		handleFolder(folderName, slideShow, fso);
+	}
+}
+
+var slideShow = new SlideShow();
+var image1 = null, image3 = null, image6 = null, image8 = null;
+var text = null;
+
+function startup() {
+	handleFolder(slideShow.baseFolderName, slideShow);
+	slideShow.photoFiles.sort();
+	slideShow.photoCount = slideShow.photoFiles.length;
+
+	image1 = document.getElementById('image1');
+	image3 = document.getElementById('image3');
+//	image1.style.width = image3.style.width = slideShow.screenWidth + 'px';
+//	image1.style.height = image3.style.height = slideShow.screenHeight + 'px';
+
+	image6 = document.getElementById('image6');
+	image8 = document.getElementById('image8');
+//	image6.style.width = image8.style.width = slideShow.screenHeight + 'px';
+//	image6.style.height = image8.style.height = Math.floor(slideShow.screenHeight * slideShow.screenHeight / slideShow.screenWidth) + 'px';
+//	image6.style.left = image8.style.left = Math.floor((slideShow.screenWidth - slideShow.screenHeight)*(slideShow.screenWidth + slideShow.screenHeight) / 2 / slideShow.screenWidth) + 'px';
+	
+	// (screen width - rotated image width) / 2 = (screen width - image height) / 2
+//	alert(image2.style.left + '\n' + image2.style.width + '\n' + image2.style.height);
+
+	text = document.getElementById('text');
+	text.color = slideShow.textColour;
+	text.backgroundColor = slideShow.textBGcolour;
+
+	switchPhoto();
+}
+
+function switchPhoto() {
+	var now = new Date();
+	var tmp = now.getMinutes() + 60 * now.getHours();
+	if (tmp > slideShow.afterHours  ||  tmp < slideShow.beforeHours ) {	// skip if after hours
+		window.setTimeout(function () {switchPhoto();}, 600000);	// 10 minutes
+		return;
+	}
+
+	slideShow.previousPhoto = slideShow.currentPhoto;
+	switch (slideShow.mode) {
+		case 'I':
+			slideShow.currentPhoto++;
+			if (slideShow.currentPhoto > slideShow.photoCount)  slideShow.currentPhoto = 0;
+			break;
+		case 'R':
+		default:
+			slideShow.currentPhoto = Math.floor(slideShow.photoCount * Math.random());
+			break;
+	}
+
+	var transitionEffect = (slideShow.transitionEffect == 23 ? Math.floor(23 * Math.random()) : slideShow.transitionEffect);
+
+	if (!slideShow.orientationData[slideShow.currentPhoto]) {
+		var ssInfo = new Object();
+		AlanSRaskin.ExifViewer.Base.getSlideshowInfo(slideShow.photoFiles[slideShow.currentPhoto], testFileName, ssInfo);
+		slideShow.orientationData[slideShow.currentPhoto] = (ssInfo.orientation ? ssInfo.orientation : 1);
+		slideShow.widthData[slideShow.currentPhoto] = (ssInfo.width ? ssInfo.width : 1024);
+		slideShow.heightData[slideShow.currentPhoto] = (ssInfo.height ? ssInfo.height : 768);
+	}
+
+	var image;
+	var rotation;
+	switch (slideShow.orientationData[slideShow.currentPhoto]) {
+		case 1:
+			image = image1;
+			rotation = 0;
+			break;
+		case 3:
+			image = image3;
+			rotation = 2;
+			break;
+		case 6:
+			image = image6;
+			rotation = 1;
+			break;
+		case 8:
+			image = image8;
+			rotation = 3;
+			break;
+		default:
+//			alert('oops');
+			break;
+	}
+
+	var top, left, width, height;
+	if (rotation % 2 == 0) {
+		width = slideShow.widthData[slideShow.currentPhoto];
+		height = slideShow.heightData[slideShow.currentPhoto];
+	} else {
+		height = slideShow.widthData[slideShow.currentPhoto];
+		width = slideShow.heightData[slideShow.currentPhoto];
+	}
+	var imageRatio = width / height;
+	var screenRatio = slideShow.screenWidth / slideShow.screenHeight;
+	if (screenRatio < imageRatio) {
+		if (width > slideShow.screenWidth) {
+			width = slideShow.screenWidth;
+			height = Math.floor(width / imageRatio);
+		}
+	} else {
+		if (height > slideShow.screenHeight) {
+			height = slideShow.screenHeight;
+			width = Math.floor(height * imageRatio);
+		}
+	}
+//	if (rotation % 2 == 0) {
+		top = Math.floor((slideShow.screenHeight - height) / 2);
+		left = Math.floor((slideShow.screenWidth - width) / 2);
+//	} else {
+//		top = Math.floor((slideShow.screenHeight - width) / 2);
+//		left = Math.floor((slideShow.screenWidth - height) / 2);
+//	}
+	image.style.left = left + 'px';
+	image.style.top = top + 'px';
+	
+	if (rotation % 2 == 0) {
+		image.style.width = width + 'px';
+		image.style.height = height + 'px';
+	} else {
+		image.style.width = height + 'px';
+		image.style.height = width + 'px';
+	}
+	
+	image.style.display = '';
+	if (image != image1)  image1.style.display = 'none';
+	if (image != image3)  image3.style.display = 'none';
+	if (image != image6)  image6.style.display = 'none';
+	if (image != image8)  image8.style.display = 'none';
+//	alert(rotation + '\n' + width + '\n' + height + '\n' + left + '\n' + top + '\n' + image.id); 
+	image.style.filter = 'progid:DXImageTransform.Microsoft.revealTrans(duration=' + slideShow.transitionDuration + ', transition=' + transitionEffect + ') '
+						+ 'progid:DXImageTransform.Microsoft.BasicImage(rotation=' + rotation + ')';
+	// rotation=0	0	orientation=1
+	// 			1  90				6
+	// 			2 180				3
+	// 			3 270				8
+//	image.filters.revealTrans.duration = slideShow.transitionDuration;
+//	image.filters.revealTrans.transition = slideShow.transitionEffect;	// otherwise it's the same random effect each time
+	
+	if (image.filters[0])  image.filters[0].apply();
+	image.src = 'file:///' + slideShow.photoFiles[slideShow.currentPhoto];
+	if (image.filters[0])  image.filters[0].play();
+
+	switch (slideShow.showText) {
+		case 'N':
+			break;
+		case 'S':
+			text.innerHTML = slideShow.photoFiles[slideShow.currentPhoto].substr(slideShow.baseFolderName.length).replace(/[\\\/]/g, ' &gt; ');
+			break;
+		case 'F':
+		default:
+			text.innerHTML = slideShow.photoFiles[slideShow.currentPhoto].replace(/[\\\/]/g, ' &gt; ');
+			break;
+	}
+	
+	window.setTimeout(function () {switchPhoto();}, slideShow.interval);
+}
+</script>
+<style type="text/css">
+#image1 {
+	position:absolute;
+	left:0;
+	top:0;
+	filter:progid:DXImageTransform.Microsoft.revealTrans(duration=5, transition=23) progid:DXImageTransform.Microsoft.BasicImage(rotation=0);
+	width:1024px;
+	height:768px;
+}
+#image3 {
+	position:absolute;
+	left:0;
+	top:0;
+	filter:progid:DXImageTransform.Microsoft.revealTrans(duration=5, transition=23) progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+	width:1024px;
+	height:768px;
+}
+#image6 {
+	position:absolute;
+	left:224px;
+	top:0;
+	filter:progid:DXImageTransform.Microsoft.revealTrans(duration=5, transition=23) progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+	width:576px;
+	height:768px;
+}
+#image8 {
+	position:absolute;
+	left:224px;
+	top:0;
+	filter:progid:DXImageTransform.Microsoft.revealTrans(duration=5, transition=23) progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+	width:576px;
+	height:768px;
+}
+#text {
+	position:absolute;
+	left:0;
+	top:0;
+	padding:3px;
+	background-color:#FFFFCC;
+	color:black;
+	font-family:sans-serif;
+	white-space:nowrap;
+	border:1px solid black;
+}
+</style>
+</head>
+<body onLoad="startup()">
+<img src="" id="image1" width="1024" height="768">
+<img src="" id="image3" width="1024" height="768">
+<img src="" id="image6" width="576" height="768">
+<img src="" id="image8" width="576" height="768">
+<div id="text"></div>
+</body>
+</html>

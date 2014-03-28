@@ -1,0 +1,244 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/global.css"  type="text/css"?>
+<?xml-stylesheet href="chrome://exif/content/exif.css"  type="text/css"?>
+<!DOCTYPE window SYSTEM "chrome://exif/locale/exif.dtd">
+ 
+<window xmlns:html="http://www.w3.org/1999/xhtml"
+        xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" 
+        title="&title.text;" style="width:&width.value;;height:&height.value;;-moz-user-select:text;"
+		id="exif_window" 
+		persist="screenX screenY width height"
+		context="copypopup">
+
+<commandset>
+	<command id="cmd_about" oncommand="window.alert('&about.text;');"/>
+	<command id="cmd_console" oncommand="AlanSRaskin.ExifViewer.Moz.toJavaScriptConsole();"/>
+	<command id="cmd_copy" oncommand="AlanSRaskin.ExifViewer.Moz.copyToClipboard(window.getSelection().toString())"/>
+	<command id="cmd_copyhtml" oncommand="AlanSRaskin.ExifViewer.Moz.copyToClipboard(document.getElementById('outputDiv').innerHTML);"/>
+	<command id="cmd_enlarge" oncommand="AlanSRaskin.ExifViewer.Moz.setRelativeFontSize('+');"/>
+	<command id="cmd_exif" oncommand="AlanSRaskin.ExifViewer.Moz.startDisplay();"/>
+	<command id="cmd_exit" oncommand="close();"/>
+	<command id="cmd_filepick" oncommand="AlanSRaskin.ExifViewer.Moz.pickFile();"/>
+	<command id="cmd_help" oncommand="window.alert('&help.text;');"/>
+	<command id="cmd_languages" oncommand="window.alert('&languages.text;');"/>
+	<command id="cmd_maker" oncommand="window.alert('&makers.text;');"/>
+	<command id="cmd_normal" oncommand="AlanSRaskin.ExifViewer.Moz.setFontSize(2);"/>
+	<command id="cmd_print" oncommand="AlanSRaskin.ExifViewer.Moz.simplePrint();"/>	<!-- printOutput() -->
+	<command id="cmd_reduce" oncommand="AlanSRaskin.ExifViewer.Moz.setRelativeFontSize('-');"/>
+	<command id="cmd_releasenotes" oncommand="AlanSRaskin.ExifViewer.Moz.showReleaseNotes();"/>
+	<command id="cmd_reset" oncommand="AlanSRaskin.ExifViewer.Moz.restoreURL();"/>
+	<command id="cmd_saveimage" oncommand="AlanSRaskin.ExifViewer.Moz.saveExifAsImage();"/>
+	<command id="cmd_expand" oncommand="AlanSRaskin.ExifViewer.Moz.expandMain(true);"/>
+	<command id="cmd_contract" oncommand="AlanSRaskin.ExifViewer.Moz.expandMain(false);"/>
+</commandset>
+
+<keyset>
+	<key id="key_a" key="&key.about;" modifiers="control" command="cmd_about"/>
+	<key id="key_c" key="&key.copy;" modifiers="control" command="cmd_copy"/>
+	<key id="key_e" key="&key.console;" modifiers="control" command="cmd_console"/>
+	<key id="key_h" key="&key.copyhtml;" modifiers="control" command="cmd_copyhtml"/>
+	<key id="key_l" key="&key.languages;" modifiers="control" command="cmd_languages"/>
+	<key id="key_m" key="&key.maker;" modifiers="control" command="cmd_maker"/>
+	<key id="key_o" key="&key.filepick;" modifiers="control" command="cmd_filepick"/>
+	<key id="key_r" key="&key.releasenotes;" modifiers="control" command="cmd_releasenotes"/>
+	<key id="key_w" key="&key.exit2;" modifiers="accel" command="cmd_exit"/>
+	<key id="key_x" key="&key.exit;" modifiers="control" command="cmd_exit"/>
+	<key id="key_f1" keycode="VK_F1" command="cmd_help"/>
+	<key id="key_plus" key="&key.enlarge;" modifiers="accel" command="cmd_enlarge"/>
+	<key id="key_equal" key="&key.enlarge2;" modifiers="accel" command="cmd_enlarge"/>
+	<key id="key_minus" key="&key.reduce;" modifiers="accel" command="cmd_reduce"/>
+	<key id="key_0" key="&key.normal;" modifiers="accel" command="cmd_normal"/>
+	<key keycode="VK_HOME" oncommand="AlanSRaskin.ExifViewer.Moz.exifScrollTo('a_top')"/>
+	<key keycode="VK_END" oncommand="AlanSRaskin.ExifViewer.Moz.exifScrollTo('a_bot')"/>
+	<key keycode="VK_PAGE_UP" oncommand="AlanSRaskin.ExifViewer.Moz.exifPageUpDown('u')"/>
+	<key keycode="VK_PAGE_DOWN" oncommand="AlanSRaskin.ExifViewer.Moz.exifPageUpDown('d')"/>
+<!--
+	<key keycode="VK_UP" oncommand="AlanSRaskin.ExifViewer.Moz.exifLineUpDown('u')"/>
+	<key keycode="VK_DOWN" oncommand="AlanSRaskin.ExifViewer.Moz.exifLineUpDown('d')"/>
+-->
+</keyset>
+
+<menubar id="exif_menubar">
+	<menu id="file-menu" label="&menu.file.label;" accesskey="&menu.file.access;">
+		<menupopup id="file-popup">
+			<menuitem label="&menu.file.open.label;" command="cmd_filepick" accesskey="&menu.file.open.access;" key="key_o"/>
+			<menuitem label="&menu.file.print.label;" command="cmd_print" accesskey="&menu.file.print.access;"/>
+			<menuseparator/>
+			<menuitem label="&menu.file.close.label;" command="cmd_exit" accesskey="&menu.file.close.access;" key="key_w"/>
+			<menuitem label="&menu.file.exit.label;" command="cmd_exit" accesskey="&menu.file.exit.access;" key="key_x"/>
+		</menupopup>
+	</menu>
+	<menu id="edit-menu" label="&menu.edit.label;" accesskey="&menu.edit.access;">
+		<menupopup id="edit-popup">
+			<menuitem label="&menu.edit.copy.label;" command="cmd_copy" accesskey="&menu.edit.copy.access;" key="key_c"/>
+			<menuitem label="&menu.edit.copyhtml.label;" command="cmd_copyhtml" accesskey="&menu.edit.copyhtml.access;" key="key_h"/>
+			<menuitem label="&menu.edit.selectall.label;" disabled="true" accesskey="&menu.edit.selectall.access;"/>
+			<!--<menuitem label="Save Exif as Image" command="cmd_saveimage" accesskey="S"/>-->
+		</menupopup>
+	</menu>
+	<menu id="view-menu" label="&menu.view.label;" accesskey="&menu.view.access;">
+		<menupopup id="view-popup">
+			<menuitem label="&menu.view.ifd0.label;" oncommand="this.checked = !this.checked;AlanSRaskin.ExifViewer.Moz.exifViewDiv(this.checked, 'ifd0')" accesskey="&menu.view.ifd0.access;" type="checkbox" checked="true"/>
+			<menuitem label="&menu.view.subifd.label;" oncommand="this.checked = !this.checked;AlanSRaskin.ExifViewer.Moz.exifViewDiv(this.checked, 'subifd')" accesskey="&menu.view.subifd.access;" type="checkbox" checked="true"/>
+			<menuitem label="&menu.view.ifd1.label;" oncommand="this.checked = !this.checked;AlanSRaskin.ExifViewer.Moz.exifViewDiv(this.checked, 'ifd1')" accesskey="&menu.view.ifd1.access;" type="checkbox" checked="true"/>
+			<menuitem label="&menu.view.interop.label;" oncommand="this.checked = !this.checked;AlanSRaskin.ExifViewer.Moz.exifViewDiv(this.checked, 'iop')" accesskey="&menu.view.interop.access;" type="checkbox" checked="true"/>
+			<menuitem label="&menu.view.gpsifd.label;" oncommand="this.checked = !this.checked;AlanSRaskin.ExifViewer.Moz.exifViewDiv(this.checked, 'gps')" accesskey="&menu.view.gpsifd.access;" type="checkbox" checked="true"/>
+			<menuitem label="&menu.view.iptc.label;" oncommand="this.checked = !this.checked;AlanSRaskin.ExifViewer.Moz.exifViewDiv(this.checked, 'iptc')" accesskey="&menu.view.iptc.access;" type="checkbox" checked="true"/>
+			<menuitem label="&menu.view.iptc_core.label;" oncommand="this.checked = !this.checked;AlanSRaskin.ExifViewer.Moz.exifViewDiv(this.checked, 'iptc_core')" accesskey="&menu.view.iptc_core.access;" type="checkbox" checked="true"/>
+			<menuitem label="&menu.view.maker.label;" oncommand="this.checked = !this.checked;AlanSRaskin.ExifViewer.Moz.exifViewDiv(this.checked, 'mn')" accesskey="&menu.view.maker.access;" type="checkbox" checked="true"/>
+			<menu id="textsize-menu" label="&menu.view.size.label;" accesskey="&menu.view.size.access;">
+				<menupopup id="textsize-popup">
+					<menuitem label="&menu.view.size.largest.label;" oncommand="AlanSRaskin.ExifViewer.Moz.setFontSize(4);" accesskey="&menu.view.size.largest.access;"/>
+					<menuitem label="&menu.view.size.larger.label;" oncommand="AlanSRaskin.ExifViewer.Moz.setFontSize(3);" accesskey="&menu.view.size.larger.access;"/>
+					<menuitem label="&menu.view.size.medium.label;" oncommand="AlanSRaskin.ExifViewer.Moz.setFontSize(2);" accesskey="&menu.view.size.medium.access;"/>
+					<menuitem label="&menu.view.size.smaller.label;" oncommand="AlanSRaskin.ExifViewer.Moz.setFontSize(1);" accesskey="&menu.view.size.smaller.access;"/>
+					<menuitem label="&menu.view.size.smallest.label;" oncommand="AlanSRaskin.ExifViewer.Moz.setFontSize(0);" accesskey="&menu.view.size.smallest.access;"/>
+					<menuseparator/>
+					<menuitem label="&menu.view.size.increase.label;" command="cmd_enlarge" accesskey="&menu.view.size.increase.access;" key="key_plus"/>
+					<menuitem label="&menu.view.size.decrease.label;" command="cmd_reduce" accesskey="&menu.view.size.decrease.access;" key="key_minus"/>
+					<menuitem label="&menu.view.size.normal.label;" command="cmd_normal" accesskey="&menu.view.size.normal.access;" key="key_0"/>
+				</menupopup>
+			</menu>
+		</menupopup>
+	</menu>
+	<menu id="scroll-menu" label="&menu.scroll.label;" accesskey="&menu.scroll.access;">
+		<menupopup id="scroll-popup">
+			<menuitem label="&menu.scroll.ifd0.label;" oncommand="AlanSRaskin.ExifViewer.Moz.exifScrollTo('a_ifd0')" accesskey="&menu.scroll.ifd0.access;"/>
+			<menuitem label="&menu.scroll.subifd.label;" oncommand="AlanSRaskin.ExifViewer.Moz.exifScrollTo('a_sub')" accesskey="&menu.scroll.subifd.access;"/>
+			<menuitem label="&menu.scroll.ifd1.label;" oncommand="AlanSRaskin.ExifViewer.Moz.exifScrollTo('a_ifd1')" accesskey="&menu.scroll.ifd1.access;"/>
+			<menuitem label="&menu.scroll.interop.label;" oncommand="AlanSRaskin.ExifViewer.Moz.exifScrollTo('a_iop')" accesskey="&menu.scroll.interop.access;"/>
+			<menuitem label="&menu.scroll.gpsifd.label;" oncommand="AlanSRaskin.ExifViewer.Moz.exifScrollTo('a_gps')" accesskey="&menu.scroll.gpsifd.access;"/>
+			<menuitem label="&menu.scroll.iptc.label;" oncommand="AlanSRaskin.ExifViewer.Moz.exifScrollTo('a_iptc')" accesskey="&menu.scroll.iptc.access;"/>
+			<menuitem label="&menu.scroll.iptc_core.label;" oncommand="AlanSRaskin.ExifViewer.Moz.exifScrollTo('a_iptc_core')" accesskey="&menu.scroll.iptc_core.access;"/>
+			<menuitem label="&menu.scroll.maker.label;" oncommand="AlanSRaskin.ExifViewer.Moz.exifScrollTo('a_maker')" accesskey="&menu.scroll.maker.access;"/>
+		</menupopup>
+	</menu>
+	<menu id="tools-menu" label="&menu.tools.label;" accesskey="&menu.tools.access;">
+		<menupopup id="help-popup">
+			<menuitem label="&menu.tools.console.label;" command="cmd_console" accesskey="&menu.tools.console.access;" key="key_e"/>
+		</menupopup>
+	</menu>
+	<menu id="help-menu" label="&menu.help.label;" accesskey="&menu.help.access;">
+		<menupopup id="help-popup">
+			<menuitem label="&menu.help.help.label;" command="cmd_help" accesskey="&menu.help.help.access;" key="key_f1"/>
+			<menuitem label="&menu.help.about.label;" command="cmd_about" accesskey="&menu.help.about.access;" key="key_a"/>
+			<menuitem label="&menu.help.maker.label;" command="cmd_maker" accesskey="&menu.help.maker.access;" key="key_m"/>
+			<menuitem label="&menu.help.notes.label;" command="cmd_releasenotes" accesskey="&menu.help.notes.access;" key="key_r"/>
+			<menuitem label="&menu.help.languages.label;" command="cmd_languages" accesskey="&menu.help.languages.access;" key="key_l"/>
+		</menupopup>
+	</menu>
+</menubar>
+
+<popupset>
+	<menupopup id="copypopup" onpopupshown="document.getElementById('outputDiv').blur();">
+	<!-- blur() needed to prevent div from expanding vertically below edge of window -->
+	    <menuitem label="&popup.copy.label;" command="cmd_copy" accesskey="&popup.copy.access;"/>
+    	<menuitem label="&popup.copyhtml.label;" command="cmd_copyhtml" accesskey="&popup.copyhtml.access;"/>
+		<menuseparator/>
+		<menuitem label="&popup.ifd0.label;" oncommand="AlanSRaskin.ExifViewer.Moz.exifScrollTo('a_ifd0')" accesskey="&popup.ifd0.access;"/>
+		<menuitem label="&popup.subifd.label;" oncommand="AlanSRaskin.ExifViewer.Moz.exifScrollTo('a_sub')" accesskey="&popup.subifd.access;"/>
+		<menuitem label="&popup.ifd1.label;" oncommand="AlanSRaskin.ExifViewer.Moz.exifScrollTo('a_ifd1')" accesskey="&popup.ifd1.access;"/>
+		<menuitem label="&popup.interop.label;" oncommand="AlanSRaskin.ExifViewer.Moz.exifScrollTo('a_iop')" accesskey="&popup.interop.access;"/>
+		<menuitem label="&popup.gpsifd.label;" oncommand="AlanSRaskin.ExifViewer.Moz.exifScrollTo('a_gps')" accesskey="&popup.gpsifd.access;"/>
+		<menuitem label="&popup.iptc.label;" oncommand="AlanSRaskin.ExifViewer.Moz.exifScrollTo('a_iptc')" accesskey="&popup.iptc.access;"/>
+		<menuitem label="&popup.iptc_core.label;" oncommand="AlanSRaskin.ExifViewer.Moz.exifScrollTo('a_iptc_core')" accesskey="&popup.iptc_core.access;"/>
+		<menuitem label="&popup.maker.label;" oncommand="AlanSRaskin.ExifViewer.Moz.exifScrollTo('a_maker')" accesskey="&popup.maker.access;"/>
+	</menupopup>
+</popupset>
+
+<stringbundleset id="stringbundles">
+	<stringbundle id="strings" src="chrome://exif/locale/exif.properties"/>
+</stringbundleset>
+
+<description style="font-size:150%;font-weight:bold;">&heading.text;</description>
+
+<!--<row flex="0" style="width:100%">-->
+	<description flex="0">&instructions.label;</description>
+<!--	<button label="+" command="cmd_expand" style="width:1em" id="expand" persist="style"/>
+	<button label="-" command="cmd_contract" style="width:1em" id="contract" persist="style"/>-->
+<!--</row>-->
+
+<hbox align="center" style="border:2px solid #000099;padding:5px;" id="main" persist="style">
+
+<grid flex="1" style="border:1px solid #888888;padding:5px;">
+	<columns>
+		<column flex="1"/>
+		<column flex="1"/>
+		<column flex="1"/>
+	</columns>
+	<rows>
+		<row align="center">
+			<description style="width:10em">&local.label;:</description>
+			<textbox id="local_file" size="40" onfocus="this.select(0)" onchange="AlanSRaskin.ExifViewer.Base.handleLocalChanged(this.value);"/>
+			<button label="&pickfile.label;" command="cmd_filepick" style="width:15em"/>
+		</row>
+		<row align="center">
+			<description style="width:10em">&remote.label;:</description>
+			<textbox id="remote_file" size="40" value="&example.url;" onfocus="this.select(0)" onchange="AlanSRaskin.ExifViewer.Base.handleRemoteChanged(this.value);"></textbox>
+			<button label="&reset.label;" command="cmd_reset" style="width:15em"/>
+		</row>
+	</rows>
+</grid>
+
+<!--<html:input type="file" id="local_file" onchange="document.getElementById('remote_file').value='';AlanSRaskin.ExifViewer.Base.clearText('fileDiv');AlanSRaskin.ExifViewer.Base.displayText(this.value, 'fileDiv');"/>-->
+
+<vbox flex="1" align="left" style="border:1px solid #888888;margin-left:5px;padding:5px;">
+	<checkbox id="basic" value="filter" label="&basic.label;" checked="false" persist="checked"/>
+	<checkbox id="maker" value="display" label="&makernote.label;" checked="false" persist="checked"/>
+	<checkbox id="image" value="suppress" label="&image.label;" checked="false" persist="checked"/>
+	<checkbox id="tables" value="yes" label="&tables.label;" checked="false" persist="checked"/>
+</vbox>
+<box flex="1" style="margin-left:10px">
+	<button id="mainBtn" label="&display.label;" command="cmd_exif"/>
+</box>
+</hbox>
+
+<html:div id="fileDiv" flex="0" style="border:2px solid #000099;padding:5px 5px 15px 5px;margin:5px 0 5px 0;">&nofile.text;</html:div>
+
+<html:div id="outputDiv" flex="1" style="overflow:auto;border:2px solid #000099;padding:.5em;font-size:100%;" persist="style.fontSize">
+	<html:a name="a_top" id="a_top"></html:a>
+	<html:div id="outputDiv_head"></html:div>
+	<html:div id="outputDiv_iptc"></html:div>
+	<html:div id="outputDiv_iptc_core"></html:div>
+	<html:div id="outputDiv_ifd0"></html:div>
+	<html:div id="outputDiv_subifd"></html:div>
+	<html:div id="outputDiv_ifd1"></html:div>
+	<html:div id="outputDiv_mn"></html:div>
+	<html:div id="outputDiv_iop"></html:div>
+	<html:div id="outputDiv_gps"></html:div>
+	<html:div id="outputDiv_msg" style="color:red;font-weight:bold">
+		<html:p>&note1.text;</html:p>
+		<html:p>&note2.text;</html:p>
+		<html:p>&note3.text;</html:p>
+	</html:div>
+	<html:a name="a_bot" id="a_bot"></html:a>
+</html:div>
+
+<statusbar>
+	<statusbarpanel id="statusbar" label="&ready.text;" flex="2"/>
+	<progressmeter id="progressbar" mode="determined" value="0"/>
+	<statusbarpanel label="&status.text;"/>
+</statusbar>
+
+<script src="exif.js"></script>
+<script src="exif_tags.js"></script>
+<script src="exif_makers.js"></script>
+<script src="exif_agfa.js"></script>
+<script src="exif_canon.js"></script>
+<script src="exif_casio.js"></script>
+<script src="exif_epson.js"></script>
+<script src="exif_fujifilm.js"></script>
+<script src="exif_konica_minolta.js"></script>
+<script src="exif_kyocera_contax.js"></script>
+<script src="exif_nikon.js"></script>
+<script src="exif_olympus.js"></script>
+<script src="exif_panasonic.js"></script>
+<script src="exif_pentax_asahi.js"></script>
+<script src="exif_ricoh.js"></script>
+<script src="exif_sony.js"></script>
+<script src="exif_generic.js"></script>
+<script src="exif_iptc.js"></script>
+<script src="exif_xml.js"></script>
+<script src="exif_moz.js"></script>
+
+</window>

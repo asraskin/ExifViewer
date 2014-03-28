@@ -1,0 +1,6 @@
+<!ENTITY exifviewer "Exibir os Dados Exif">
+<!ENTITY exifviewerlink "Exibir os Dados EXIF do Link">
+<!ENTITY exifviewerimage "Exibir os Dados EXIF da Imagem">
+<!ENTITY exifviewerattach "Exibir os Dados EXIF do Anexo">
+<!ENTITY exifviewerlinkrotate "Exibir Link de Rota&#231;&#227;o de Imagem (Exif)">
+<!ENTITY exifviewerimagerotate "Rotacionar a Imagem (Exif)">

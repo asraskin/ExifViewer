@@ -1,0 +1,75 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+<title>Rotated Image Viewer (Exif)</title>
+<script type="text/javascript">
+var img = null;
+var canvas = null;
+var show = null;
+var shrunk = false;
+
+function startup() {
+	var url = unescape(document.location.search.replace(/^\?file=/, ''));
+	document.title = url;
+	canvas = document.createElement('canvas');
+	img = document.getElementById('img');
+	show = document.getElementById('show');
+	doStuff(url);
+}	// startup()
+
+function doStuff(image) {
+	if (!(canvas  &&  canvas.getContext)) {
+		show.style.display = '';	// use <img> rather than <canvas>
+		img.style.display = '';
+	}
+	img.onload = doStuff2;
+	img.src = unescape(image);
+}	// doStuff()
+
+function doStuff2() {
+	var obj = null;
+	var scale = 1;
+	if (canvas  &&  canvas.getContext) {
+		var ctx = canvas.getContext("2d");
+		var h = img.width;
+		var w = img.height;
+		var H = window.innerHeight;
+		var W = window.innerWidth;
+		if (h > W  ||  w > H) {
+			scale = Math.min(H/h, W/w);
+			w *= scale;
+			h *= scale;
+		}
+		canvas.setAttribute('width', w);
+		canvas.setAttribute('height', h);
+		ctx.rotate(Math.PI / 2);
+		ctx.translate(0, -w);
+		window.innerWidth = w + 20;
+		window.innerHeight = h + 20;
+		ctx.scale(scale, scale);
+		ctx.drawImage(img, 0, 0);
+		obj = canvas;
+	} else {
+		if (!shrunk) {
+			img.width = Math.round(img.width * scaleW);
+//			img.height = Math.round(img.height * scaleH);
+			shrunk = true;
+		}
+		return;
+	}
+	show.style.display = '';
+	if (show.childNodes  &&  show.childNodes.length > 0) {
+		show.replaceChild(obj, show.childNodes[0]);
+	} else {
+		show.appendChild(obj);
+	}
+}	// doStuff2()
+</script>
+</head>
+<body onload="startup()">
+<p>Loading image&#8230;<br>
+Click on image on close window</p>
+<div id="show" style="position:absolute;top:0;left:0;display:none;border:1px solid blue;" onclick="window.opener.focus();window.close();/*this.style.display = 'none'*/"><img id="img" src="" style="display:none;" onclick="window.close;/*this.style.display = 'none';this.parentNode.style.display = ''*/"></div>
+</body>
+</html>

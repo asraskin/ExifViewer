@@ -1,0 +1,27 @@
+content		exif	content/
+
+# Firefox:
+overlay		chrome://browser/content/browser.xul		chrome://exif/content/overlay.xul
+# Thunderbird:
+overlay		chrome://messenger/content/messenger.xul	chrome://exif/content/overlayTB.xul
+overlay		chrome://messenger/content/messageWindow.xul	chrome://exif/content/overlayTB.xul
+overlay		chrome://messenger/content/mailWindowOverlay.xul	chrome://exif/content/overlayTB.xul
+# Seamonkey (not confirmed):
+style		chrome://navigator/content/navigator.xul chrome://exif/content/overlay.xul
+
+# English, French (incomplete), German, (simplified) Chinese, Czech, Russian, and Japanese
+locale	exif	en-CA	locale/en-CA/
+locale	exif	fr		locale/fr/
+locale	exif	de		locale/de/
+locale	exif	zh-CN	locale/zh-CN/
+locale	exif	cs		locale/cs/
+locale	exif	ru-RU	locale/ru-RU/
+locale	exif	ja		locale/ja/
+locale	exif	pt-BR	locale/pt-BR/
+
+# Portuguese and Dutch
+#locale	exif	pt-PT	locale/pt-PT/
+#locale	exif	nl-NL	locale/nl-NL/
+
+skin	exif	classic/1.0		skin/
+style 	chrome://global/content/customizeToolbar.xul	chrome://exif/skin/overlay.css

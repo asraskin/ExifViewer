@@ -1,0 +1,210 @@
+<!-- LOCALIZATION NOTE (entity name): comment -->
+
+<!ENTITY width.value "800px">
+<!ENTITY height.value "500px">
+<!ENTITY title.text "Exif Viewer">
+<!ENTITY heading.text "Exif Viewer">
+<!ENTITY status.text "Exif Viewer">
+<!ENTITY local.label "Lok&#225;ln&#237; soubor">
+<!ENTITY remote.label "Vzd&#225;len&#225; URL">
+<!ENTITY instructions.label "Vyberte pros&#237;m fotku a nastavte po&#382;adovan&#233; vlastnosti, pot&#233; klikn&#283;te na tla&#269;&#237;tko &#8220;Zobraz EXIF data&#8221;.">
+<!ENTITY display.label "Zobraz EXIF data">
+<!ENTITY pickfile.label "Vyber soubor&#8230;">
+<!ENTITY reset.label "Na&#269;ti znovu URL">
+<!ENTITY note1.text "POZOR!!! Toto roz&#353;&#237;&#345;en&#237; p&#345;&#237;mo p&#345;istupuje k informac&#237;m na va&#353;em pevn&#233;m disku. Pokud je to pro V&#225;s probl&#233;m, prohl&#233;dn&#283;te si zdrojov&#253; k&#243;d. Bu&#271; se p&#345;esv&#283;d&#269;&#237;te, &#382;e se &#269;tou pouze EXIF data obsa&#382;en&#225; ve vybran&#233; fotce, nebo si m&#367;&#382;ete roz&#353;&#237;&#345;en&#237; odinstalovat.">
+<!ENTITY note2.text "Pozn&#225;mka: Ne v&#353;echny obr&#225;zky JPEG obsahuj&#237; EXIF data. Mnoho program&#367; pro editaci/manipulaci s obr&#225;zky tato data dokonce i po mal&#253;ch &#250;prav&#225;ch zahod&#237;. To m&#367;&#382;e b&#253;t d&#367;vod, pro&#269; Exif Viewer hl&#225;s&#237; &#8220;Nelze z&#237;skat po&#382;adovan&#225; EXIF data&#8221; u n&#283;kter&#253;ch lok&#225;ln&#237;ch i vzd&#225;len&#253;ch soubor&#367;. V n&#283;kter&#253;ch p&#345;&#237;padech lze v grafick&#253;ch programech nastavit mo&#382;nost, aby se zachov&#225;vala EXIF data.">
+<!ENTITY note3.text "Pozn&#225;mka: Osobn&#237; nebo firemn&#237; firewallu m&#367;&#382;e Exif Vieweru br&#225;nit v p&#345;&#237;stupu ke vzd&#225;len&#233; URL, co&#382; m&#367;&#382;e zp&#367;sobit zamrznut&#237; tohoto roz&#353;&#237;&#345;en&#237;. Ov&#283;&#345;te pros&#237;m, &#382;e prohl&#237;&#382;e&#269; Firefox m&#225; ud&#283;leno opr&#225;vn&#283;n&#237; k p&#345;&#237;stupu na internet d&#345;&#237;ve, ne&#382; se budete pokou&#353;et zobrazovat EXIF data vzd&#225;len&#253;ch soubor&#367; JPEG.">
+<!ENTITY makernote.label "Zobraz pozn&#225;mku v&#253;robce (pokud je dostupn&#225;)">
+<!ENTITY image.label "Nezobrazuj obr&#225;zek">
+<!ENTITY tables.label "Pou&#382;&#237;vej tabulky m&#237;sto seznam&#367;">
+<!ENTITY tags.label "Zobraz EXIF zna&#269;ku ID">
+<!ENTITY basic.label "Pouze z&#225;kladn&#237; informace">
+<!ENTITY example.url "http://www.steves-digicams.com/2006_reviews/a700/samples/img_0003.jpg">
+<!ENTITY ready.text "P&#345;ipraveno">
+<!ENTITY nofile.text "&example.url;">
+<!--<!ENTITY nofile.text "(nebyl vybr&amp;#225;n &amp;#382;&amp;#225;dn&amp;#253; soubor)">-->
+<!ENTITY about.text "Exif Viewer v1.85 (12 srpen 2012)\n
+\n
+Z&#237;sk&#225;v&#225; a zobrazuje EXIF (Exchangeable Image File), IPTC-NAA/IIM
+(International Press Telecommunications Council / Newspaper Association of America
+/ Information Interchange Model), a IPTC Core (Adobe XMP, Extensible Metadata Platform) metadata poch&#225;zej&#237;c&#237; z lok&#225;ln&#237;ch i vzd&#225;len&#253;ch soubor&#367; JPEG vyfocen&#253;ch digit&#225;ln&#237;mi fotoapar&#225;ty. D&#225;le zobrazuje polo&#382;ku &#8220;Zobraz EXIF data&#8221; v kontextov&#233;m menu prohl&#237;&#382;e&#269;e, odkud se EXIF Viewer snadno spou&#353;t&#237;.\n
+\n
+Napsal Alan Raskin\n
+asraskin@gmail.com">
+<!ENTITY help.text "Toto roz&#353;&#237;&#345;en&#237; z&#237;sk&#225;v&#225; a 
+zobrazuje informace (nastaven&#237; fo&#357;&#225;ku a fotky, GPS sou&#345;adnice atd.), 
+kter&#233; digit&#225;ln&#237; fotoapar&#225;ty vkl&#225;daj&#237; do digit&#225;ln&#237;ch 
+fotografi&#237; JPEG.\n
+\n
+Tyto informace jsou ulo&#382;en&#233; v &#8220;Exchangeable Image File&#8221; (EXIF) form&#225;tu
+podle TIFF specifikace, kter&#253; se m&#367;&#382;e nach&#225;zet v souborech JPG, TIFF, PNG, MIFF, 
+a DNG. Data EXIF je organizov&#225;n podle r&#367;zn&#253;ch Image File 
+Directories (IFD) uvnit&#345; fotky; v&#253;robci mohou tak&#233; voliteln&#283; 
+p&#345;idat sv&#233; informace do pol&#237;&#269;ka &#8220;Pozn&#225;mka v&#253;robce&#8221;.\n
+\n
+Exif Viewer ulo&#382;en&#233; informace interpretuje podle standardu EXIF 2.2 a tak&#233; 
+interpretuje n&#283;kter&#233; &#8220;Pozn&#225;mky od v&#253;robce&#8221;, kter&#233; tam r&#367;zn&#237; 
+v&#253;robci p&#345;id&#225;vaj&#237;. V dal&#353;&#237;ch verz&#237;ch plugin budou p&#345;id&#225;v&#225;na 
+dal&#353;&#237; pol&#237;&#269;ka.\n
+\n
+Exif Viewer um&#237; &#269;&#237;st informace ze zvolen&#233;ho souboru ulo&#382;en&#233;ho 
+na Va&#353;em lok&#225;ln&#237;m disku nebo na webov&#253;ch str&#225;nk&#225;ch na 
+internetu a zobrazuje v&#253;sledek na va&#353;em po&#269;&#237;ta&#269;i. &#381;&#225;dn&#233; 
+dal&#353;&#237; informace se ne&#269;tou, ani se nikam nepos&#237;laj&#237;. Nev&#225;hejte 
+prozkoumat zdrojov&#253; k&#243;d a ov&#283;&#345;te si to sami.
+">
+<!ENTITY makers.text "Pozn&#225;mky v&#253;robce jsou dostupn&#233; pro n&#225;sleduj&#237;c&#237; v&#253;robce:\n
+\n
+Canon, Casio, Fujifilm, Nikon, Olympus, Panasonic\n
+\n
+Podpora pro dal&#353;&#237; v&#253;robce bude p&#345;id&#225;na v dal&#353;&#237;ch verz&#237;ch.">
+
+<!ENTITY notes.title.text "Pozn&#225;mky k releasu EXIF Vieweru">
+<!ENTITY notes.close.label "Zav&#345;&#237;t">
+<!ENTITY languages.text "Pokud chcete pomoci s p&#345;ekladem u&#382;ivatelsk&#233;ho rozhran&#237; (pop&#345;&#237;pad&#283; s EXIF daty) do jin&#253;ch jazyk&#367;, ne&#382; je angli&#269;tina, kontaktujte m&#283; pros&#237;m na asraskin@gmail.com.">
+<!ENTITY key.copy "c">
+<!ENTITY key.console "e">
+<!ENTITY key.filepick "o">
+<!ENTITY key.exit "x">
+<!ENTITY key.about "a">
+<!ENTITY key.copyhtml "h">
+<!ENTITY key.languages "l">
+<!ENTITY key.maker "m">
+<!ENTITY key.releasenotes "r">
+<!ENTITY key.exit2 "w">
+<!ENTITY key.enlarge "+">
+<!ENTITY key.enlarge2 "=">
+<!ENTITY key.reduce "-">
+<!ENTITY key.normal "0">
+
+<!--
+<!ENTITY key. "">
+<!ENTITY key. "">
+<!ENTITY key. "">
+-->
+
+<!ENTITY menu.file.label "Soubor">
+<!ENTITY menu.file.access "S">
+	<!ENTITY menu.file.open.label "Otev&#345;&#237;t&#8230;">
+	<!ENTITY menu.file.open.access "O">
+	<!ENTITY menu.file.print.label "Tisk">
+	<!ENTITY menu.file.print.access "T">
+	<!ENTITY menu.file.history-loc.label "Historie (lok&#225;ln&#237;)">
+	<!ENTITY menu.file.history-loc.access "l">
+		<!ENTITY menu.file.history-loc.clear.label "Smazat lok&#225;ln&#237; historii">
+		<!ENTITY menu.file.history-loc.clear.access "D">
+	<!ENTITY menu.file.history-rem.label "Historie (vzd&#225;len&#225;)">
+	<!ENTITY menu.file.history-rem.access "H">
+		<!ENTITY menu.file.history-rem.clear.label "Smazat vzd&#225;lenou historii">
+		<!ENTITY menu.file.history-rem.clear.access "V">
+	<!ENTITY menu.file.close.label "Zav&#345;&#237;t">
+	<!ENTITY menu.file.close.access "Z">
+	<!ENTITY menu.file.exit.label "Konec">
+	<!ENTITY menu.file.exit.access "K">
+<!ENTITY menu.edit.label "Editovat">
+<!ENTITY menu.edit.access "E">
+	<!ENTITY menu.edit.copy.label "Kop&#237;rovat">
+	<!ENTITY menu.edit.copy.access "K">
+	<!ENTITY menu.edit.copyhtml.label "Kop&#237;rovat v&#353;e jako HTML">
+	<!ENTITY menu.edit.copyhtml.access "H">
+	<!ENTITY menu.edit.selectall.label "Vybrat v&#353;e">
+	<!ENTITY menu.edit.selectall.access "V">
+<!ENTITY menu.view.label "Zobrazit&#8230;">
+<!ENTITY menu.view.access "T">
+	<!ENTITY menu.view.console.label "Zobrazit/skr&#253;t ovl&#225;d&#225;n&#237;">
+	<!ENTITY menu.view.console.access "N">
+	<!ENTITY menu.view.ifd0.label "IFD0">
+	<!ENTITY menu.view.ifd0.access "0">
+	<!ENTITY menu.view.subifd.label "Sub IFD">
+	<!ENTITY menu.view.subifd.access "S">
+	<!ENTITY menu.view.ifd1.label "IFD1">
+	<!ENTITY menu.view.ifd1.access "1">
+	<!ENTITY menu.view.interop.label "Interop IFD">
+	<!ENTITY menu.view.interop.access "I">
+	<!ENTITY menu.view.gpsifd.label "GPS IFD">
+	<!ENTITY menu.view.gpsifd.access "G">
+	<!ENTITY menu.view.iptc.label "IPTC">
+	<!ENTITY menu.view.iptc.access "P">
+	<!ENTITY menu.view.iptc_core.label "IPTC Core">
+	<!ENTITY menu.view.iptc_core.access "T">
+	<!ENTITY menu.view.maker.label "Pozn&#225;mka v&#253;robce">
+	<!ENTITY menu.view.maker.access "P">
+	<!ENTITY menu.view.size.label "Velikost textu">
+	<!ENTITY menu.view.size.access "V">
+		<!ENTITY menu.view.size.largest.label "Nejv&#283;t&#353;&#237;">
+		<!ENTITY menu.view.size.largest.access "N">
+		<!ENTITY menu.view.size.larger.label "V&#283;t&#353;&#237;">
+		<!ENTITY menu.view.size.larger.access "V">
+		<!ENTITY menu.view.size.medium.label "St&#345;edn&#237;">
+		<!ENTITY menu.view.size.medium.access "S">
+		<!ENTITY menu.view.size.smaller.label "Men&#353;&#237;">
+		<!ENTITY menu.view.size.smaller.access "e">
+		<!ENTITY menu.view.size.smallest.label "Nejmen&#353;&#237;">
+		<!ENTITY menu.view.size.smallest.access "j">
+		<!ENTITY menu.view.size.increase.label "Zv&#283;t&#353;it">
+		<!ENTITY menu.view.size.increase.access "Z">
+		<!ENTITY menu.view.size.decrease.label "Zmen&#353;it">
+		<!ENTITY menu.view.size.decrease.access "t">
+		<!ENTITY menu.view.size.normal.label "Norm&#225;ln&#237;">
+		<!ENTITY menu.view.size.normal.access "o">
+<!ENTITY menu.scroll.label "Jdi na&#8230;">
+<!ENTITY menu.scroll.access "J">
+	<!ENTITY menu.scroll.ifd0.label "IFD0">
+	<!ENTITY menu.scroll.ifd0.access "0">
+	<!ENTITY menu.scroll.subifd.label "Sub IFD">
+	<!ENTITY menu.scroll.subifd.access "S">
+	<!ENTITY menu.scroll.ifd1.label "IFD1">
+	<!ENTITY menu.scroll.ifd1.access "1">
+	<!ENTITY menu.scroll.interop.label "Interop IFD">
+	<!ENTITY menu.scroll.interop.access "I">
+	<!ENTITY menu.scroll.gpsifd.label "GPS IFD">
+	<!ENTITY menu.scroll.gpsifd.access "G">
+	<!ENTITY menu.scroll.iptc.label "IPTC">
+	<!ENTITY menu.scroll.iptc.access "P">
+	<!ENTITY menu.scroll.iptc_core.label "IPTC Core">
+	<!ENTITY menu.scroll.iptc_core.access "T">
+	<!ENTITY menu.scroll.maker.label "Pozn&#225;mka v&#253;robce">
+	<!ENTITY menu.scroll.maker.access "P">
+<!ENTITY menu.tools.label "N&#225;stroje">
+<!ENTITY menu.tools.access "N">
+	<!ENTITY menu.tools.console.label "Chybov&#225;/JavaScript konzole">
+	<!ENTITY menu.tools.console.access "C">
+<!ENTITY menu.help.label "N&#225;pov&#283;da">
+<!ENTITY menu.help.access "P">
+	<!ENTITY menu.help.help.label "N&#225;pov&#283;da">
+	<!ENTITY menu.help.help.access "P">
+	<!ENTITY menu.help.about.label "O programu Exif Viewer">
+	<!ENTITY menu.help.about.access "A">
+	<!ENTITY menu.help.maker.label "Pozn&#225;mky v&#253;robce">
+	<!ENTITY menu.help.maker.access "M">
+	<!ENTITY menu.help.notes.label "&#250;daje o t&#233;to verzi">
+	<!ENTITY menu.help.notes.access "V">
+	<!ENTITY menu.help.languages.label "Jazyky">
+	<!ENTITY menu.help.languages.access "J">
+
+<!ENTITY popup.copy.label "Kop&#237;rovat">
+<!ENTITY popup.copy.access "K">
+<!ENTITY popup.copyhtml.label "Kop&#237;rovat v&#353;e jako HTML">
+<!ENTITY popup.copyhtml.access "H">
+<!ENTITY popup.ifd0.label "IFD0">
+<!ENTITY popup.ifd0.access "0">
+<!ENTITY popup.subifd.label "Sub IFD">
+<!ENTITY popup.subifd.access "S">
+<!ENTITY popup.ifd1.label "IFD1">
+<!ENTITY popup.ifd1.access "1">
+<!ENTITY popup.interop.label "Interop IFD">
+<!ENTITY popup.interop.access "I">
+<!ENTITY popup.gpsifd.label "GPS IFD">
+<!ENTITY popup.gpsifd.access "G">
+<!ENTITY popup.iptc.label "IPTC">
+<!ENTITY popup.iptc.access "P">
+<!ENTITY popup.iptc_core.label "IPTC Core">
+<!ENTITY popup.iptc_core.access "T">
+<!ENTITY popup.maker.label "Pozn&#225;mka v&#253;robce">
+<!ENTITY popup.maker.access "M">
+
+
+<!--
+<!ENTITY menu..label "">
+<!ENTITY menu..access "">
+-->

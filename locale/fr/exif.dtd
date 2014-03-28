@@ -1,0 +1,229 @@
+<!-- LOCALIZATION NOTE (entity name): comment -->
+
+<!ENTITY width.value "1000px">
+<!ENTITY height.value "500px">
+<!ENTITY title.text "Exif Viewer">
+<!ENTITY heading.text "Exif Viewer">
+<!ENTITY status.text "Exif Viewer">
+<!ENTITY local.label "Fichier Local">
+<!ENTITY remote.label "URL &#xE0; Distance">
+<!ENTITY instructions.label "Veuiller choisir votre image et placer les options d&#xE9;sir&#xE9;es, 
+cliquent alors sur le bouton &#8220;Montrer les Donn&#xE9;es d&#8217;Exif&#8221;.">
+<!ENTITY display.label "Montrer les Donn&#xE9;es d&#8217;Exif">
+<!ENTITY pickfile.label "Choisir le fichier...">
+<!ENTITY reset.label "Reconstituer le URL">
+<!ENTITY note1.text "AVERTISSEMENT!!! Cette addition acc&#xE8;de directement &#xE0;
+l&#8217;information sur votre disque dur. Si c&#8217;est un probl&#xE8;me pour vous, vous pouvez 
+voir la source pour confirmer que le Viewer lit juste les donn&#xE9;es d&#8217;Exif contenues 
+dans l&#8217;image choisie, ou vous pouvez enlever l&#8217;addition.">
+<!ENTITY note2.text "Note: Toutes les images de JPEG ne contiennent pas des donn&#xE9;es 
+d&#8217;Exif. En particulier, beaucoup de la logiciel que &#xE9;dite ou manipule les images
+ne preservent pas ces donn&#xE9;es, m&#xEA;me pour les changements mineurs &#xE0; l&#8217;image. Ceci 
+peut expliquer pourquoi l&#8217;Exif Viewer ne r&#xE9;ussise pas &#xE0; l&#8217;extrait de toutes les 
+donn&#xE9;es d&#8217;Exif pour beaucoup de fichiers locaux et &#xE0; distance. Dans certains cas, 
+vous pouvez configurer votre logiciel pour preserver les donn&#xE9;es
+d&#8217;Exif.">
+<!ENTITY note3.text "Note: Les arrangements personnels ou de corporation de mur &#xE0;
+l&#8217;&#xE9;preuve du feu peuvent emp&#xEA;cher l&#8217;Exif Viewer d&#8217;acc&#xE9;der &#xE0; URLs &#xE0; distance, ayant 
+pour r&#xE9;sultat la prolongation semblant &#xEA;tre coinc&#xE9;. Veuillez s&#8217;assurer que Firefox 
+a &#xE9;t&#xE9; donn&#xE9; la permission d&#8217;acc&#xE9;der &#xE0; l&#8217;Internet avant d&#8217;essayer de regarder les
+donn&#xE9;es d&#8217;Exif pour un JPEG &#xE0; distance.">
+<!ENTITY makernote.label "Montrer l&#8217;information de Note de Fabricant (si c&#8217;est appropri&#xE9;)">
+<!ENTITY image.label "Supprimer l&#8217;affichage d&#8217;image">
+<!ENTITY tables.label "Utiliser tables plut&#xF4;t que listes">
+<!ENTITY tags.label "Montrer le num&#xE9;ro d&#8217;identit&#xE9; EXIF">
+<!ENTITY basic.label "Information simple seulment">
+<!ENTITY example.url "http://www.steves-digicams.com/2006_reviews/a700/samples/img_0003.jpg">
+<!ENTITY ready.text "Pr&#xEA;t">
+<!ENTITY nofile.text "&example.url;">
+<!--<!ENTITY nofile.text "(no file selected)">-->
+<!ENTITY about.text "Exif Viewer v2.00 (22 ao&#xFB;t 2012)\n
+\n
+Extracts and displays the Exif (Exchangeable Image File), IPTC-NAA/IIM
+(International Press Telecommunications Council / Newspaper Association of America
+/ Information Interchange Model), and IPTC Core (Adobe XMP, Extensible Metadata Platform) metadata, as stored by digital 
+still cameras, in both local and remote JPEG images. Also adds &#8220;View Exif Data&#8221;
+items to the &#8220;Link&#8221; and &#8220;Image&#8221; parts of the browser 
+context (right-click pop-up) menu, to make it easier to invoke the Exif Viewer.\n
+\n
+&#xC9;crire par Alan Raskin\n
+asraskin@gmail.com">
+<!ENTITY help.text "This extension extracts and displays some of the information 
+(camera and picture settings, GPS information if applicable, etc.) that digital 
+still cameras embed in their JPEG digital photographs.\n
+\n
+This information is stored in &#8220;Exchangeable Image File&#8221; (Exif) format 
+according to the TIFF specification, and may be found in JPG, TIFF, PNG, MIFF, 
+and DNG images. The Exif meta information is organized into different Image File 
+Directories (IFDs) within an image; manufacturers can also optionally include 
+proprietary information in the &#8220;Maker Note&#8221; field.\n
+\n
+The Exif Viewer interprets the stored information according to the Exif 2.2
+standard, and can also understand some of the maker note information from various
+manufacturers. Additional manufacturers and more
+details for existing ones may be added in subsequent releases.\n
+\n
+Exif Viewer reads information from files stored on your local hard drive or at
+remote web sites and 
+selected by you, and displays the results on your system. No other information is 
+read, nor is any information sent to me or anyone else. Feel free to examine the 
+source code if you wish to verify this.
+">
+<!ENTITY makers.text "The maker notes from the following manufacturers are at least 
+partially extracted:\n
+\n
+Canon, Casio, Fujifilm, Nikon, Olympus, and Panasonic\n
+\n
+Other manufacturers may be added in the future.
+">
+<!ENTITY notes.title.text "Exif Viewer Notes de Sortir">
+<!ENTITY notes.close.label "Fermer">
+<!ENTITY languages.text "Si vous voulez m&#8217;assister au traduction de l&#8217;interface
+des utilisateurs (et eventuellement les donn&#xE9;es d&#8217;Exif) aux autres langues que 
+d&#8217;Anglais, s&#8217;il vous plait me contactez &#xE1; asraskin@gmail.com.">
+<!ENTITY key.copy "c">
+<!ENTITY key.console "e">
+<!ENTITY key.filepick "o">
+<!ENTITY key.exit "x">
+<!ENTITY key.about "a">
+<!ENTITY key.copyhtml "h">
+<!ENTITY key.languages "l">
+<!ENTITY key.maker "m">
+<!ENTITY key.releasenotes "r">
+<!ENTITY key.exit2 "w">
+<!ENTITY key.enlarge "+">
+<!ENTITY key.enlarge2 "=">
+<!ENTITY key.reduce "-">
+<!ENTITY key.normal "0">
+
+<!--
+<!ENTITY key. "">
+<!ENTITY key. "">
+<!ENTITY key. "">
+-->
+
+<!ENTITY menu.file.label "Fichier">
+<!ENTITY menu.file.access "F">
+	<!ENTITY menu.file.open.label "Ouvrir&#8230;">
+	<!ENTITY menu.file.open.access "O">
+	<!ENTITY menu.file.print.label "Imprimer">
+	<!ENTITY menu.file.print.access "I">
+	<!ENTITY menu.file.close.label "Fermer">
+	<!ENTITY menu.file.close.access "F">
+	<!ENTITY menu.file.history-loc.label "Histoire (locale)">
+	<!ENTITY menu.file.history-loc.access "l">
+		<!ENTITY menu.file.history-loc.clear.label "Effacer Histoire Locale">
+		<!ENTITY menu.file.history-loc.clear.access "E">
+	<!ENTITY menu.file.history-rem.label "Histoire (&#xFB;loign&#xFB;e)">
+	<!ENTITY menu.file.history-rem.access "H">
+		<!ENTITY menu.file.history-rem.clear.label "Effacer Histoire &#xC9;loign&#xFB;e">
+		<!ENTITY menu.file.history-rem.clear.access "E">
+	<!ENTITY menu.file.exit.label "Quitter">
+	<!ENTITY menu.file.exit.access "Q">
+<!ENTITY menu.edit.label "&#xC9;diter">
+<!ENTITY menu.edit.access "&#xC9;">
+	<!ENTITY menu.edit.copy.label "Copier">
+	<!ENTITY menu.edit.copy.access "C">
+	<!ENTITY menu.edit.copyhtml.label "Copier Tous Comme HTML">
+	<!ENTITY menu.edit.copyhtml.access "H">
+	<!ENTITY menu.edit.selectall.label "Selectionner Tous">
+	<!ENTITY menu.edit.selectall.access "S">
+<!ENTITY menu.view.label "Afficher&#8230;">
+<!ENTITY menu.view.access "f">
+	<!ENTITY menu.view.console.label "Cacher/Montrer Contr&#xFB;les">
+	<!ENTITY menu.view.console.access "C">
+	<!ENTITY menu.view.ifd0.label "IFD0">
+	<!ENTITY menu.view.ifd0.access "0">
+	<!ENTITY menu.view.subifd.label "Sub IFD">
+	<!ENTITY menu.view.subifd.access "S">
+	<!ENTITY menu.view.ifd1.label "IFD1">
+	<!ENTITY menu.view.ifd1.access "1">
+	<!ENTITY menu.view.interop.label "Interop IFD">
+	<!ENTITY menu.view.interop.access "I">
+	<!ENTITY menu.view.gpsifd.label "GPS IFD">
+	<!ENTITY menu.view.gpsifd.access "G">
+	<!ENTITY menu.view.iptc.label "IPTC">
+	<!ENTITY menu.view.iptc.access "P">
+	<!ENTITY menu.view.iptc_core.label "IPTC Core">
+	<!ENTITY menu.view.iptc_core.access "T">
+	<!ENTITY menu.view.maker.label "Note de Fabricant">
+	<!ENTITY menu.view.maker.access "F">
+	<!ENTITY menu.view.size.label "Taille des Textes">
+	<!ENTITY menu.view.size.access "T">
+		<!ENTITY menu.view.size.largest.label "Le Plus Grand">
+		<!ENTITY menu.view.size.largest.access "P">
+		<!ENTITY menu.view.size.larger.label "Plus Grand">
+		<!ENTITY menu.view.size.larger.access "G">
+		<!ENTITY menu.view.size.medium.label "Moyen">
+		<!ENTITY menu.view.size.medium.access "M">
+		<!ENTITY menu.view.size.smaller.label "Plus Petit">
+		<!ENTITY menu.view.size.smaller.access "e">
+		<!ENTITY menu.view.size.smallest.label "Le Plus Petit">
+		<!ENTITY menu.view.size.smallest.access "t">
+		<!ENTITY menu.view.size.increase.label "Augmenter">
+		<!ENTITY menu.view.size.increase.access "A">
+		<!ENTITY menu.view.size.decrease.label "Diminuer">
+		<!ENTITY menu.view.size.decrease.access "D">
+		<!ENTITY menu.view.size.normal.label "Normal">
+		<!ENTITY menu.view.size.normal.access "N">
+<!ENTITY menu.scroll.label "Aller &#xE0;&#8230;">
+<!ENTITY menu.scroll.access "A">
+	<!ENTITY menu.scroll.ifd0.label "IFD0">
+	<!ENTITY menu.scroll.ifd0.access "0">
+	<!ENTITY menu.scroll.subifd.label "Sub IFD">
+	<!ENTITY menu.scroll.subifd.access "S">
+	<!ENTITY menu.scroll.ifd1.label "IFD1">
+	<!ENTITY menu.scroll.ifd1.access "1">
+	<!ENTITY menu.scroll.interop.label "Interop IFD">
+	<!ENTITY menu.scroll.interop.access "I">
+	<!ENTITY menu.scroll.gpsifd.label "GPS IFD">
+	<!ENTITY menu.scroll.gpsifd.access "G">
+	<!ENTITY menu.scroll.iptc.label "IPTC">
+	<!ENTITY menu.scroll.iptc.access "P">
+	<!ENTITY menu.scroll.iptc_core.label "IPTC Core">
+	<!ENTITY menu.scroll.iptc_core.access "T">
+	<!ENTITY menu.scroll.maker.label "Note de Fabricant">
+	<!ENTITY menu.scroll.maker.access "F">
+<!ENTITY menu.tools.label "Outils">
+<!ENTITY menu.tools.access "O">
+	<!ENTITY menu.tools.console.label "Console Erreur/JavaScript">
+	<!ENTITY menu.tools.console.access "C">
+<!ENTITY menu.help.label "Aide">
+<!ENTITY menu.help.access "d">
+	<!ENTITY menu.help.help.label "Aide">
+	<!ENTITY menu.help.help.access "A">
+	<!ENTITY menu.help.about.label "&#xC1; Propos de l&#8217;Exif Viewer">
+	<!ENTITY menu.help.about.access "P">
+	<!ENTITY menu.help.maker.label "Notes de Fabricant">
+	<!ENTITY menu.help.maker.access "F">
+	<!ENTITY menu.help.notes.label "Notes de Sortie">
+	<!ENTITY menu.help.notes.access "S">
+	<!ENTITY menu.help.languages.label "Langues">
+	<!ENTITY menu.help.languages.access "L">
+
+<!ENTITY popup.copy.label "Copier">
+<!ENTITY popup.copy.access "C">
+<!ENTITY popup.copyhtml.label "Copier Tous Comme HTML">
+<!ENTITY popup.copyhtml.access "H">
+<!ENTITY popup.ifd0.label "IFD0">
+<!ENTITY popup.ifd0.access "0">
+<!ENTITY popup.subifd.label "Sub IFD">
+<!ENTITY popup.subifd.access "S">
+<!ENTITY popup.ifd1.label "IFD1">
+<!ENTITY popup.ifd1.access "1">
+<!ENTITY popup.interop.label "Interop IFD">
+<!ENTITY popup.interop.access "I">
+<!ENTITY popup.gpsifd.label "GPS IFD">
+<!ENTITY popup.gpsifd.access "G">
+<!ENTITY popup.iptc.label "IPTC">
+<!ENTITY popup.iptc.access "P">
+<!ENTITY popup.iptc_core.label "IPTC Core">
+<!ENTITY popup.iptc_core.access "T">
+<!ENTITY popup.maker.label "Notes de Fabricant">
+<!ENTITY popup.maker.access "F">
+<!--
+<!ENTITY menu..label "">
+<!ENTITY menu..access "">
+-->
+
+

@@ -1,0 +1,225 @@
+<!-- LOCALIZATION NOTE (entity name): comment -->
+
+<!ENTITY width.value "800px">
+<!ENTITY height.value "500px">
+<!ENTITY title.text "Exif Viewer">
+<!ENTITY heading.text "Exif Viewer">
+<!ENTITY status.text "Exif Viewer">
+<!ENTITY local.label "Local File">
+<!ENTITY remote.label "Remote URL">
+<!ENTITY instructions.label "Please select your image and set the desired options, 
+then click on the &#8220;Display EXIF Data&#8221; button.">
+<!ENTITY display.label "Display EXIF Data">
+<!ENTITY pickfile.label "Select file...">
+<!ENTITY reset.label "Restore URL">
+<!ENTITY note1.text "WARNING!!! This extension directly accesses information on 
+your hard drive. If this is a problem for you, you can either view the source to 
+confirm that it is just reading the EXIF data contained in the selected image, or 
+you can uninstall the extension.">
+<!ENTITY note2.text "Note: Not all JPEG images contain EXIF data. In particular, 
+many image editing/manipulation software don&#8217;t 
+preserve this data, even for minor changes to the image. This may explain why 
+Exif Viewer reports &#8220;Unable to extract all the EXIF data&#8221; for many 
+local and remote files. In some cases, you may be able to set a &#8220;Preserve 
+EXIF Data&#8221; configuration setting/option in your software.">
+<!ENTITY note3.text "Note: Personal or corporate firewall settings may prevent the
+Exif Viewer from accessing remote URLs, resulting in the extension appearing to
+be frozen. Please ensure that Firefox has been given permission to access the 
+internet before attempting to view the EXIF data for a remote JPEG.">  
+<!ENTITY makernote.label "Display Maker Note (if available)">
+<!ENTITY image.label "Suppress image display">
+<!ENTITY tables.label "Use tables rather than lists">
+<!ENTITY tags.label "Display EXIF tag ID">
+<!ENTITY basic.label "Basic information only">
+<!ENTITY example.url "http://www.steves-digicams.com/2006_reviews/a700/samples/img_0003.jpg">
+<!ENTITY ready.text "Ready">
+<!ENTITY nofile.text "&example.url;">
+<!--<!ENTITY nofile.text "(no file selected)">-->
+<!ENTITY about.text "Exif Viewer v2.00 (August 22, 2012)\n
+\n
+Extracts and displays the EXIF (Exchangeable Image File), IPTC-NAA/IIM
+(International Press Telecommunications Council / Newspaper Association of America
+/ Information Interchange Model), and IPTC Core (Adobe XMP, Extensible Metadata Platform) metadata, as stored by digital 
+still cameras, in both local and remote JPEG images. Also adds &#8220;View EXIF Data&#8221;
+items to the &#8220;Link&#8221; and &#8220;Image&#8221; parts of the browser 
+context (right-click pop-up) menu, to make it easier to invoke the Exif Viewer.\n
+\n
+Written by Alan Raskin\n
+asraskin@gmail.com">
+<!ENTITY help.text "This extension extracts and displays some of the information 
+(camera and picture settings, GPS information if applicable, etc.) that digital 
+still cameras embed in their JPEG digital photographs.\n
+\n
+This information is stored in &#8220;Exchangeable Image File&#8221; (EXIF) format 
+according to the TIFF specification, and may be found in JPG, TIFF, PNG, MIFF, 
+and DNG images. The EXIF meta information is organized into different Image File 
+Directories (IFDs) within an image; manufacturers can also optionally include 
+proprietary information in the &#8220;Maker Note&#8221; field.\n
+\n
+The Exif Viewer interprets the stored information according to the EXIF 2.2
+standard, and can also understand some of the maker note information from various
+manufacturers. Additional manufacturers and more
+details for existing ones may be added in subsequent releases.\n
+\n
+Exif Viewer reads information from files stored on your local hard drive or at
+remote web sites and 
+selected by you, and displays the results on your system. No other information is 
+read, nor is any information sent to me or anyone else. Feel free to examine the 
+source code if you wish to verify this.
+">
+<!ENTITY makers.text "The maker notes from the following manufacturers are at least 
+partially extracted:\n
+\n
+Canon, Casio, Fujifilm, Nikon, Olympus, and Panasonic\n
+\n
+Other manufacturers may be added in the future.
+">
+<!ENTITY notes.title.text "Exif Viewer Release Notes">
+<!ENTITY notes.close.label "Close">
+<!ENTITY languages.text "If you wish to help translate the user interface (and 
+eventually the EXIF data) text into languages other than English, please contact
+me at asraskin@gmail.com.">
+<!ENTITY key.copy "c">
+<!ENTITY key.console "e">
+<!ENTITY key.filepick "o">
+<!ENTITY key.exit "x">
+<!ENTITY key.about "a">
+<!ENTITY key.copyhtml "h">
+<!ENTITY key.languages "l">
+<!ENTITY key.maker "m">
+<!ENTITY key.releasenotes "r">
+<!ENTITY key.exit2 "w">
+<!ENTITY key.enlarge "+">
+<!ENTITY key.enlarge2 "=">
+<!ENTITY key.reduce "-">
+<!ENTITY key.normal "0">
+
+<!--
+<!ENTITY key. "">
+<!ENTITY key. "">
+<!ENTITY key. "">
+-->
+
+<!ENTITY menu.file.label "File">
+<!ENTITY menu.file.access "F">
+	<!ENTITY menu.file.open.label "Open&#8230;">
+	<!ENTITY menu.file.open.access "O">
+	<!ENTITY menu.file.print.label "Print">
+	<!ENTITY menu.file.print.access "P">
+	<!ENTITY menu.file.history-loc.label "History (local)">
+	<!ENTITY menu.file.history-loc.access "l">
+		<!ENTITY menu.file.history-loc.clear.label "Clear Local History">
+		<!ENTITY menu.file.history-loc.clear.access "C">
+	<!ENTITY menu.file.history-rem.label "History (remote)">
+	<!ENTITY menu.file.history-rem.access "H">
+		<!ENTITY menu.file.history-rem.clear.label "Clear Remote History">
+		<!ENTITY menu.file.history-rem.clear.access "C">
+	<!ENTITY menu.file.close.label "Close">
+	<!ENTITY menu.file.close.access "C">
+	<!ENTITY menu.file.exit.label "Exit">
+	<!ENTITY menu.file.exit.access "x">
+<!ENTITY menu.edit.label "Edit">
+<!ENTITY menu.edit.access "e">
+	<!ENTITY menu.edit.copy.label "Copy">
+	<!ENTITY menu.edit.copy.access "C">
+	<!ENTITY menu.edit.copyhtml.label "Copy All as HTML">
+	<!ENTITY menu.edit.copyhtml.access "H">
+	<!ENTITY menu.edit.selectall.label "Select All">
+	<!ENTITY menu.edit.selectall.access "S">
+<!ENTITY menu.view.label "View&#8230;">
+<!ENTITY menu.view.access "V">
+	<!ENTITY menu.view.console.label "Toggle Controls">
+	<!ENTITY menu.view.console.access "C">
+	<!ENTITY menu.view.ifd0.label "IFD0">
+	<!ENTITY menu.view.ifd0.access "0">
+	<!ENTITY menu.view.subifd.label "Sub IFD">
+	<!ENTITY menu.view.subifd.access "S">
+	<!ENTITY menu.view.ifd1.label "IFD1">
+	<!ENTITY menu.view.ifd1.access "1">
+	<!ENTITY menu.view.interop.label "Interop IFD">
+	<!ENTITY menu.view.interop.access "I">
+	<!ENTITY menu.view.gpsifd.label "GPS IFD">
+	<!ENTITY menu.view.gpsifd.access "G">
+	<!ENTITY menu.view.iptc.label "IPTC">
+	<!ENTITY menu.view.iptc.access "P">
+	<!ENTITY menu.view.iptc_core.label "IPTC Core">
+	<!ENTITY menu.view.iptc_core.access "T">
+	<!ENTITY menu.view.maker.label "Maker Note">
+	<!ENTITY menu.view.maker.access "M">
+	<!ENTITY menu.view.size.label "Text Size">
+	<!ENTITY menu.view.size.access "z">
+		<!ENTITY menu.view.size.largest.label "Largest">
+		<!ENTITY menu.view.size.largest.access "g">
+		<!ENTITY menu.view.size.larger.label "Larger">
+		<!ENTITY menu.view.size.larger.access "L">
+		<!ENTITY menu.view.size.medium.label "Medium">
+		<!ENTITY menu.view.size.medium.access "M">
+		<!ENTITY menu.view.size.smaller.label "Smaller">
+		<!ENTITY menu.view.size.smaller.access "S">
+		<!ENTITY menu.view.size.smallest.label "Smallest">
+		<!ENTITY menu.view.size.smallest.access "a">
+		<!ENTITY menu.view.size.increase.label "Increase">
+		<!ENTITY menu.view.size.increase.access "I">
+		<!ENTITY menu.view.size.decrease.label "Decrease">
+		<!ENTITY menu.view.size.decrease.access "D">
+		<!ENTITY menu.view.size.normal.label "Normal">
+		<!ENTITY menu.view.size.normal.access "N">
+<!ENTITY menu.scroll.label "Scroll To&#8230;">
+<!ENTITY menu.scroll.access "S">
+	<!ENTITY menu.scroll.ifd0.label "IFD0">
+	<!ENTITY menu.scroll.ifd0.access "0">
+	<!ENTITY menu.scroll.subifd.label "Sub IFD">
+	<!ENTITY menu.scroll.subifd.access "S">
+	<!ENTITY menu.scroll.ifd1.label "IFD1">
+	<!ENTITY menu.scroll.ifd1.access "1">
+	<!ENTITY menu.scroll.interop.label "Interop IFD">
+	<!ENTITY menu.scroll.interop.access "I">
+	<!ENTITY menu.scroll.gpsifd.label "GPS IFD">
+	<!ENTITY menu.scroll.gpsifd.access "G">
+	<!ENTITY menu.scroll.iptc.label "IPTC">
+	<!ENTITY menu.scroll.iptc.access "P">
+	<!ENTITY menu.scroll.iptc_core.label "IPTC Core">
+	<!ENTITY menu.scroll.iptc_core.access "T">
+	<!ENTITY menu.scroll.maker.label "Maker Note">
+	<!ENTITY menu.scroll.maker.access "M">
+<!ENTITY menu.tools.label "Tools">
+<!ENTITY menu.tools.access "T">
+	<!ENTITY menu.tools.console.label "Error/JavaScript Console">
+	<!ENTITY menu.tools.console.access "C">
+<!ENTITY menu.help.label "Help">
+<!ENTITY menu.help.access "H">
+	<!ENTITY menu.help.help.label "Help">
+	<!ENTITY menu.help.help.access "e">
+	<!ENTITY menu.help.about.label "About Exif Viewer">
+	<!ENTITY menu.help.about.access "A">
+	<!ENTITY menu.help.maker.label "Maker Notes">
+	<!ENTITY menu.help.maker.access "M">
+	<!ENTITY menu.help.notes.label "Release Notes">
+	<!ENTITY menu.help.notes.access "R">
+	<!ENTITY menu.help.languages.label "Languages">
+	<!ENTITY menu.help.languages.access "L">
+
+<!ENTITY popup.copy.label "Copy">
+<!ENTITY popup.copy.access "C">
+<!ENTITY popup.copyhtml.label "Copy All as HTML">
+<!ENTITY popup.copyhtml.access "H">
+<!ENTITY popup.ifd0.label "IFD0">
+<!ENTITY popup.ifd0.access "0">
+<!ENTITY popup.subifd.label "Sub IFD">
+<!ENTITY popup.subifd.access "S">
+<!ENTITY popup.ifd1.label "IFD1">
+<!ENTITY popup.ifd1.access "1">
+<!ENTITY popup.interop.label "Interop IFD">
+<!ENTITY popup.interop.access "I">
+<!ENTITY popup.gpsifd.label "GPS IFD">
+<!ENTITY popup.gpsifd.access "G">
+<!ENTITY popup.iptc.label "IPTC">
+<!ENTITY popup.iptc.access "P">
+<!ENTITY popup.iptc_core.label "IPTC Core">
+<!ENTITY popup.iptc_core.access "T">
+<!ENTITY popup.maker.label "Maker Note">
+<!ENTITY popup.maker.access "M">
+<!--
+<!ENTITY menu..label "">
+<!ENTITY menu..access "">
+-->

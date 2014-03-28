@@ -1,0 +1,120 @@
+/** { 
+	border-collapse:collapse;
+}
+*/
+h1 {
+	color:#00008f;
+	background-color:inherit;
+	font-size:175%;
+/*	display:inline;*/
+}
+button {
+	width:15em;
+}
+
+table.exif_output {
+	border:1px solid black;
+/*	border-collapse:collapse; */
+}
+
+table.exif_output td {
+	border:1px solid black;
+/*	border-collapse:collapse; */
+	padding:5px;
+}
+
+table.exif_output td.first {
+	white-space:nowrap;
+}
+
+textbox {
+	height:2em;
+}
+
+.biggerText {
+	font-size:150%;
+	font-weight:bold;
+}
+
+.fileLabel {
+	width:8em;
+}
+
+.thumbnail {
+	border:2px solid #000099;
+	margin:5px;
+/*	min-height:3em;
+	min-width:4em;
+*/
+	vertical-align:top;
+}
+
+button {
+	margin-left:10px;
+}
+#mainBtn {
+	font-weight:bold;
+}
+#controls {
+	border:2px solid #000099; 
+	padding:5px;
+	clear:both;
+}
+
+#mainControls {
+	display:block;
+	margin-bottom:5px;
+	width:100%;
+}
+#local_file ,  #remote_file{
+	width:15em;
+}
+
+#options , #options2 {
+	border:1px solid #888888;
+	margin-left:5px;
+	padding:5px;
+}
+#outputDiv {
+	border:2px solid #000099;
+	font-size:100%;
+	overflow:auto;
+	padding:.5em;
+	width:100%;
+}
+
+.separator {
+	clear:both;
+}
+
+#outputDiv div  {
+	clear:left;
+}
+ 
+#outputDiv_head {
+	width:100%;
+}
+#outputDiv_img {
+	float:right !important;
+}
+/*#outputDiv_ifd0 ,*/ #outputDiv_iptc /*, #outputDiv_iptc_core*/ {
+	float:left;
+	width:auto !important;
+}
+#outputDiv_msg {
+	color:red;
+	font-weight:bold;
+}
+
+#pickFields {
+	border:1px solid #888888;
+	padding:5px;
+}
+
+#fileDiv {
+	border:2px solid #000099;
+	margin:5px 0 5px 0;
+	padding:5px 5px 15px 5px;
+}
+
+

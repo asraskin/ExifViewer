@@ -1,0 +1,6 @@
+﻿<!ENTITY exifviewer "Exif Viewer">
+<!ENTITY exifviewerlink "查看此链接的Exif数据">
+<!ENTITY exifviewerimage "查看图像的Exif数据">
+<!ENTITY exifviewerattach "查看附加Exif数据">
+<!ENTITY exifviewerlinkrotate "查看旋转的链接(Exif)">
+<!ENTITY exifviewerimagerotate "查看旋转的图像(Exif)">

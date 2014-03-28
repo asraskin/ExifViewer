@@ -1,0 +1,174 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+<title>Rotated Image Viewer (Exif)</title>
+<style type="text/css">
+body { font-family:sans-serif; }
+div#menu a { text-decoration:none; }
+</style>
+<script type="text/javascript">
+
+var url = 'file://C:/Documents and Settings/alanr/My Documents/europe/Img_0355.jpg';
+var angle = 0;
+var scale = 1;
+var start = true;
+var delta = 20;
+
+var canvas = null;
+var img = null;
+var div = null;
+
+function startup() {
+	var search = document.location.search.replace(/^\?/, '');
+	var items = search.split('&');
+	var query = {}
+	for (var i = 0 ; i < items.length ; i++) {
+		var tmp = items[i].split('=');
+		query[tmp[0]] = tmp[1];
+	}
+	if (query.file) {
+		url = unescape(query.file);
+	}
+	if (query.angle) {
+		angle = 90 * Math.round(parseInt(query.angle, 10)/90);
+	}
+	document.title = url;
+	div = document.getElementById('show');
+
+	doStuff(url);
+}	// startup()
+
+function doStuff(image) {
+	if (div  &&  canvas) (div.removeNode ? div.removeNode(canvas) : div.removeChild(canvas));
+	canvas = document.createElement('canvas');
+	if (!(canvas  &&  canvas.getContext)) {
+		alert('The non-standard "canvas" HTML element is not supported by your browser!');
+		return;
+	}
+	canvas.onclick = closeWindow;
+	img = document.createElement('img');
+	if (img) {
+		img.onload = doStuff2;
+		img.src = image;
+	} else {
+		alert('An error has occurred that prevents this page from working.'); 
+	}
+}	// doStuff()
+
+function doStuff2() {
+	if (img  &&  div  &&  canvas  &&  canvas.getContext) {
+		var ctx = canvas.getContext("2d");
+		var h = img.width;
+		var w = img.height;
+		if (start) {
+			start = false;
+			var H = window.innerHeight - delta;
+			var W = window.innerWidth - delta;
+//			if (h > H  ||  w > W) {
+				scale = Math.min(H/h, W/w);
+//			}
+		}
+		w *= scale;
+		h *= scale;
+		if (angle < 0) {
+			angle += 360 * (Math.floor(-angle/360) + 1)
+		}
+		switch (angle % 360) {
+		case 0:
+		case 180:
+			canvas.setAttribute('width', h);
+			canvas.setAttribute('height', w);
+			break;
+		case 90:
+		case 270:
+			canvas.setAttribute('width', w);
+			canvas.setAttribute('height', h);
+			break;
+		}
+		ctx.rotate(angle * Math.PI / 180);
+		switch (angle % 360) {
+		case 0:
+//			ctx.translate(0, 0);
+			resizeWindow(h, w);
+			break;
+		case 90:
+			ctx.translate(0, -w);
+			resizeWindow(w, h);
+			break;
+		case 180:
+			ctx.translate(-h, -w);
+			resizeWindow(h, w);
+			break;
+		case 270:
+			ctx.translate(-h, 0);
+			resizeWindow(w, h);
+			break;
+		}
+		ctx.scale(scale, scale);
+		ctx.drawImage(img, 0, 0);
+		div.appendChild(canvas);
+		canvas.style.zIndex = 0;
+	} else {
+		alert('An error has occurred that prevents this page from working.'); 
+		return;
+	}
+}	// doStuff2()
+
+function resizeWindow(w, h) {
+	var tmp = window.onresize;
+	window.onresize = null;
+	if (w + delta > window.innerWidth)  window.innerWidth = w + delta;
+	if (h + delta > window.innerHeight) window.innerHeight = h + delta;
+	window.onresize = tmp;
+}	// resizeWindow()
+
+function rotate(delta) {
+	angle += delta;
+	doStuff(url);
+}	// rotate()
+
+function rescale(factor) {
+	scale *= factor;
+	doStuff(url);
+}	// rescale()
+
+function reset() {
+	angle = 0;
+	scale = 0.25;
+	start = true;
+	doStuff(url);
+}	// reset()
+
+function closeWindow() {
+	if (window.opener) {
+		window.opener.focus();
+		window.close();
+	} else {
+		alert('This is a stand-alone window, so it is being left open...');
+	}
+}	// closeWindow()
+
+function resized() {
+	start = true;
+	doStuff(url);
+}	// resized()
+
+window.onresize = resized;
+window.onload = startup;
+</script>
+</head>
+<body>
+<div id="show" style="position:absolute;top:0;left:0;z-index:0"></div>
+<div id="menu" style="position:absolute;top:0;right:0;border:2px solid black;z-index:1000;font-size:200%;background-color:white;padding:3px;text-decoration:none;">
+<!--<a href="#" onclick="rotate(90);return false" title="Rotate CW by 90&deg;">&#8405;</a>
+<a href="#" onclick="rotate(-90);return false" title="Rotate CCW by 90&deg;">&#8404;</a>-->
+<a href="#" onclick="rotate(90);return false" title="Rotate CW by 90&deg;">CW</a>
+<a href="#" onclick="rotate(-90);return false" title="Rotate CCW by 90&deg;">CCW</a>
+<a href="#" onclick="rescale(0.90);return false" title="Reduce by 10%">&#8722;</a>
+<a href="#" onclick="rescale(1.10);return false" title="Magnify by 10%">+</a>
+<a href="#" onclick="reset();return false" title="Reset">&#8728;</a>
+<a href="#" onclick="closeWindow();return false" title="Close Window">X</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/global.css"  type="text/css"?>
+<!DOCTYPE window SYSTEM "chrome://exif/locale/exif.dtd">
+ 
+<window xmlns:html="http://www.w3.org/1999/xhtml"
+        xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" 
+        title="&notes.title.text;" style="width:600px;height:600px;-moz-user-select:text;"
+		persist="width height screenX screenY"
+		id="exif_notes_window">
+
+<commandset>
+	<command id="cmd_close" oncommand="close();"/>
+</commandset>
+
+<keyset>
+	<key keycode="VK_ESCAPE" command="cmd_close"/>
+</keyset>
+
+<iframe flex="1" src="chrome://exif/locale/releasenotes.html" style="overflow:auto;border:2px solid #000099;margin:.5em;padding:.5em;background-color:white;"/>
+<button label="&notes.close.label;" flex="0" command="cmd_close"/>
+
+</window>

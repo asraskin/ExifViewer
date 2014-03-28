@@ -1,0 +1,222 @@
+<!-- LOCALIZATION NOTE (entity name): comment -->
+
+<!ENTITY width.value "800px">
+<!ENTITY height.value "500px">
+<!ENTITY title.text "Exif Viewer">
+<!ENTITY heading.text "Exif Viewer">
+<!ENTITY status.text "Exif Viewer">
+<!ENTITY local.label "Локальный файл">
+<!ENTITY remote.label "Сетевой файл (URL)">
+<!ENTITY instructions.label "Выберите изображение и нужные настройки, 
+после чего нажмите кнопку &#8220;Показать EXIF&#8221;.">
+<!ENTITY display.label "Показать EXIF">
+<!ENTITY pickfile.label "Выбрать файл...">
+<!ENTITY reset.label "Восстановить URL">
+<!ENTITY note1.text "ВНИМАНИЕ!!! Это расширение обращается за информацией непосредственно
+к жёсткому диску. Если для вас это проблема, можно либо просматривать источник, чтобы
+гарантированно считывать EXIF-данные из выбранного файла, либо
+удалить это расширение.">
+<!ENTITY note2.text "Примечание: EXIF-данные есть не в каждом JPEG-изображении. В частности, 
+многие программы для редактирования/манипулирования графическими файлами не сохраняют
+эти данные, даже если в изображение была внесена минимальная правка. Именно поэтому
+Exif Viewer для многих локальных и сетевых файлов может выдавать сообщение о
+невозможности извлечь EXIF-данные. Иногда у вас есть возможность настроить 
+своё ПО так, чтобы EXIF-данные сохранялись.">
+<!ENTITY note3.text "Примечание: настройки личного или корпоративного брандмауэра могут
+препятствовать доступу Exif Viewer к сетевым ресурсам, из-за чего возможна ситуация, когда
+расширение будет казаться 'зависшим'. Поэтому прежде чем пытаться просматривать EXIF-данные
+у сетевого файла, убедитесь, что Firefox предоставлено право доступа в Интернет.">  
+<!ENTITY makernote.label "С примечанием изготовителя (если возможно)">
+<!ENTITY image.label "Не показывать изображение">
+<!ENTITY tables.label "Показывать как таблицы (а не как списки)">
+<!ENTITY tags.label "Показывать идентификаторы тегов EXIF">
+<!ENTITY basic.label "Только основная информация">
+<!ENTITY example.url "http://www.steves-digicams.com/2006_reviews/a700/samples/img_0003.jpg">
+<!ENTITY ready.text "Готово">
+<!ENTITY nofile.text "&example.url;">
+<!--<!ENTITY nofile.text "(не выбран файл)">-->
+<!ENTITY about.text "Exif Viewer версия 1.60 (15 февраля 2011 г.)\n
+\n
+Извлекает и показывает метаданные EXIF (Exchangeable Image File), IPTC-NAA/IIM
+(International Press Telecommunications Council / Newspaper Association of America
+/ Information Interchange Model) и IPTC Core (Adobe XMP, Extensible Metadata Platform),
+сохраняемые цифровыми фотокамерами, как у локальных, так и у сетевых JPEG-изображений.
+Кроме того, добавляет в контекстное меню браузера команды просмотра EXIF, упрощающие вызов Exif Viewer.\n
+\n
+Автор: Alan Raskin (araskin@allstream.net)\n
+Перевод: Дмитрий Ерохин (erodim@mail.ru)">
+<!ENTITY help.text "Это расширение извлекает и показывает информацию
+(параметры камеры и изображения, GPS-сведения и т.д.), встраиваемую
+цифровыми камерами в JPEG-файлы при съёмке.\n
+\n
+Эта информация хранится в формате EXIF (&#8220;Exchangeable Image File&#8221;)
+в соответствии со спецификацией TIFF и может присутствовать в файлах JPG, TIFF, PNG, MIFF
+и DNG. Метаданные EXIF упорядочены по разным каталогам IFD (Image File
+Directories) внутри изображения; кроме того, фирмы могут также включать собственную
+информацию в поле &#8220;Примечание изготовителя&#8221; (&#8220;Maker Note&#8221;).\n
+\n
+Exif Viewer интерпретирует такую информацию в соответствии со стандартом EXIF 2.2
+и распознаёт примечания изготовителя разных фирм. В последующих версиях количество
+распознаваемых изготовителей и объём сведений могут быть увеличены.\n
+\n
+Exif Viewer по вашему выбору считывает информацию из файлов, хранящихся на локальном
+жёстком диске, либо с веб-сайтов, и отображает результаты в вашей системе. Никакая
+иная информация не считывается, равно как не отсылается ни автору, ни кому-либо ещё.
+Чтобы в этом убедиться, можно проштудировать исходный код данного расширения.
+">
+<!ENTITY makers.text "На данный момент полностью или частично поддерживается извлечение
+примечаний следующих изготовителей камер:\n
+\n
+Canon, Casio, Fujifilm, Nikon, Olympus и Panasonic.\n
+\n
+В будущем, возможно, будет добавлена поддержка и других фирм.
+">
+<!ENTITY notes.title.text "Exif Viewer - История версий">
+<!ENTITY notes.close.label "Закрыть">
+<!ENTITY languages.text "Если вы хотите помочь перевести интерфейс этого расширения (а
+также EXIF-сообщения) на язык, отличный от английского, пожалуйста, напишите об этом
+на адрес araskin@allstream.net.">
+<!ENTITY key.copy "c">
+<!ENTITY key.console "e">
+<!ENTITY key.filepick "o">
+<!ENTITY key.exit "x">
+<!ENTITY key.about "a">
+<!ENTITY key.copyhtml "h">
+<!ENTITY key.languages "l">
+<!ENTITY key.maker "m">
+<!ENTITY key.releasenotes "r">
+<!ENTITY key.exit2 "w">
+<!ENTITY key.enlarge "+">
+<!ENTITY key.enlarge2 "=">
+<!ENTITY key.reduce "-">
+<!ENTITY key.normal "0">
+
+<!--
+<!ENTITY key. "">
+<!ENTITY key. "">
+<!ENTITY key. "">
+-->
+
+<!ENTITY menu.file.label "Файл">
+<!ENTITY menu.file.access "ф">
+	<!ENTITY menu.file.open.label "Открыть&#8230;">
+	<!ENTITY menu.file.open.access "о">
+	<!ENTITY menu.file.print.label "Печать">
+	<!ENTITY menu.file.print.access "ч">
+	<!ENTITY menu.file.history-loc.label "История (локальная)">
+	<!ENTITY menu.file.history-loc.access "и">
+		<!ENTITY menu.file.history-loc.clear.label "Очистить локальную историю">
+		<!ENTITY menu.file.history-loc.clear.access "о">
+	<!ENTITY menu.file.history-rem.label "История (сетевая)">
+	<!ENTITY menu.file.history-rem.access "с">
+		<!ENTITY menu.file.history-rem.clear.label "Очистить сетевую историю">
+		<!ENTITY menu.file.history-rem.clear.access "о">
+	<!ENTITY menu.file.close.label "Закрыть">
+	<!ENTITY menu.file.close.access "з">
+	<!ENTITY menu.file.exit.label "Выход">
+	<!ENTITY menu.file.exit.access "ы">
+<!ENTITY menu.edit.label "Правка">
+<!ENTITY menu.edit.access "п">
+	<!ENTITY menu.edit.copy.label "Скопировать">
+	<!ENTITY menu.edit.copy.access "к">
+	<!ENTITY menu.edit.copyhtml.label "Скопировать все как HTML">
+	<!ENTITY menu.edit.copyhtml.access "о">
+	<!ENTITY menu.edit.selectall.label "Выбрать все">
+	<!ENTITY menu.edit.selectall.access "в">
+<!ENTITY menu.view.label "Вид&#8230;">
+<!ENTITY menu.view.access "в">
+	<!ENTITY menu.view.console.label "Вкл./выкл. органы управления">
+	<!ENTITY menu.view.console.access "в">
+	<!ENTITY menu.view.ifd0.label "IFD0">
+	<!ENTITY menu.view.ifd0.access "0">
+	<!ENTITY menu.view.subifd.label "Sub IFD">
+	<!ENTITY menu.view.subifd.access "S">
+	<!ENTITY menu.view.ifd1.label "IFD1">
+	<!ENTITY menu.view.ifd1.access "1">
+	<!ENTITY menu.view.interop.label "Interop IFD">
+	<!ENTITY menu.view.interop.access "I">
+	<!ENTITY menu.view.gpsifd.label "GPS IFD">
+	<!ENTITY menu.view.gpsifd.access "G">
+	<!ENTITY menu.view.iptc.label "IPTC">
+	<!ENTITY menu.view.iptc.access "P">
+	<!ENTITY menu.view.iptc_core.label "IPTC Core">
+	<!ENTITY menu.view.iptc_core.access "T">
+	<!ENTITY menu.view.maker.label "Примечание изготовителя">
+	<!ENTITY menu.view.maker.access "п">
+	<!ENTITY menu.view.size.label "Размер текста">
+	<!ENTITY menu.view.size.access "р">
+		<!ENTITY menu.view.size.largest.label "Самый крупный">
+		<!ENTITY menu.view.size.largest.access "с">
+		<!ENTITY menu.view.size.larger.label "Крупный">
+		<!ENTITY menu.view.size.larger.access "к">
+		<!ENTITY menu.view.size.medium.label "Средний">
+		<!ENTITY menu.view.size.medium.access "е">
+		<!ENTITY menu.view.size.smaller.label "Мелкий">
+		<!ENTITY menu.view.size.smaller.access "м">
+		<!ENTITY menu.view.size.smallest.label "Самый мелкий">
+		<!ENTITY menu.view.size.smallest.access "а">
+		<!ENTITY menu.view.size.increase.label "Увеличить">
+		<!ENTITY menu.view.size.increase.access "у">
+		<!ENTITY menu.view.size.decrease.label "Уменьшить">
+		<!ENTITY menu.view.size.decrease.access "м">
+		<!ENTITY menu.view.size.normal.label "По умолчанию">
+		<!ENTITY menu.view.size.normal.access "ю">
+<!ENTITY menu.scroll.label "Перейти к&#8230;">
+<!ENTITY menu.scroll.access "к">
+	<!ENTITY menu.scroll.ifd0.label "IFD0">
+	<!ENTITY menu.scroll.ifd0.access "0">
+	<!ENTITY menu.scroll.subifd.label "Sub IFD">
+	<!ENTITY menu.scroll.subifd.access "S">
+	<!ENTITY menu.scroll.ifd1.label "IFD1">
+	<!ENTITY menu.scroll.ifd1.access "1">
+	<!ENTITY menu.scroll.interop.label "Interop IFD">
+	<!ENTITY menu.scroll.interop.access "I">
+	<!ENTITY menu.scroll.gpsifd.label "GPS IFD">
+	<!ENTITY menu.scroll.gpsifd.access "G">
+	<!ENTITY menu.scroll.iptc.label "IPTC">
+	<!ENTITY menu.scroll.iptc.access "P">
+	<!ENTITY menu.scroll.iptc_core.label "IPTC Core">
+	<!ENTITY menu.scroll.iptc_core.access "T">
+	<!ENTITY menu.scroll.maker.label "Примечание изготовителя">
+	<!ENTITY menu.scroll.maker.access "п">
+<!ENTITY menu.tools.label "Сервис">
+<!ENTITY menu.tools.access "е">
+	<!ENTITY menu.tools.console.label "Консоль ошибок/JavaScript">
+	<!ENTITY menu.tools.console.access "к">
+<!ENTITY menu.help.label "Справка">
+<!ENTITY menu.help.access "с">
+	<!ENTITY menu.help.help.label "Справка">
+	<!ENTITY menu.help.help.access "с">
+	<!ENTITY menu.help.about.label "Об Exif Viewer">
+	<!ENTITY menu.help.about.access "о">
+	<!ENTITY menu.help.maker.label "Примечания изготовителей">
+	<!ENTITY menu.help.maker.access "п">
+	<!ENTITY menu.help.notes.label "История версий">
+	<!ENTITY menu.help.notes.access "и">
+	<!ENTITY menu.help.languages.label "Языки">
+	<!ENTITY menu.help.languages.access "я">
+
+<!ENTITY popup.copy.label "Скопировать">
+<!ENTITY popup.copy.access "к">
+<!ENTITY popup.copyhtml.label "Скопировать все как HTML">
+<!ENTITY popup.copyhtml.access "к">
+<!ENTITY popup.ifd0.label "IFD0">
+<!ENTITY popup.ifd0.access "0">
+<!ENTITY popup.subifd.label "Sub IFD">
+<!ENTITY popup.subifd.access "S">
+<!ENTITY popup.ifd1.label "IFD1">
+<!ENTITY popup.ifd1.access "1">
+<!ENTITY popup.interop.label "Interop IFD">
+<!ENTITY popup.interop.access "I">
+<!ENTITY popup.gpsifd.label "GPS IFD">
+<!ENTITY popup.gpsifd.access "G">
+<!ENTITY popup.iptc.label "IPTC">
+<!ENTITY popup.iptc.access "P">
+<!ENTITY popup.iptc_core.label "IPTC Core">
+<!ENTITY popup.iptc_core.access "T">
+<!ENTITY popup.maker.label "Примечание изготовителя">
+<!ENTITY popup.maker.access "п">
+<!--
+<!ENTITY menu..label "">
+<!ENTITY menu..access "">
+-->

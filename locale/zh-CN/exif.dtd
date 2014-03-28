@@ -1,0 +1,192 @@
+<!-- LOCALIZATION NOTE (entity name): comment -->
+
+<!ENTITY width.value "800px">
+<!ENTITY height.value "500px">
+<!ENTITY title.text "Exif Viewer">
+<!ENTITY heading.text "Exif Viewer">
+<!ENTITY status.text "Exif Viewer">
+<!ENTITY local.label "&#26412;&#22320;&#25991;&#20214;">
+<!ENTITY remote.label "&#36828;&#31243;URL">
+<!ENTITY instructions.label "&#35831;&#36873;&#25321;&#24744;&#30340;&#22270;&#20687;&#25991;&#20214;&#24182;&#20570;&#30456;&#24212;&#35774;&#32622;&#65292;&#28982;&#21518;&#28857;&#20987;&#8220;&#26174;&#31034;EXIF&#25968;&#25454;&#8221;&#25353;&#38062;&#12290;">
+<!ENTITY display.label "&#26174;&#31034;EXIF&#25968;&#25454;">
+<!ENTITY pickfile.label "&#36873;&#25321;&#25991;&#20214;...">
+<!ENTITY reset.label "&#24674;&#22797;&#20445;&#23384;&#30340;URL">
+<!ENTITY note1.text "&#35686;&#21578;&#65281;&#65281;&#65281;&#27492;&#25193;&#23637;&#20250;&#30452;&#25509;&#35775;&#38382;&#24744;&#30828;&#30424;&#19978;&#30340;&#20449;&#24687;&#12290;&#22914;&#26524;&#24744;&#35273;&#24471;&#19981;&#25918;&#24515;&#65292;&#21487;&#20197;&#26816;&#26597;&#28304;&#20195;&#30721;&#65292;&#30830;&#35748;&#23427;&#21482;&#26159;&#20174;&#36873;&#25321;&#30340;&#22270;&#20687;&#25991;&#20214;&#20013;&#35835;&#21462;Exif&#25968;&#25454;&#65292;&#20877;&#25110;&#32773;&#24744;&#20063;&#21487;&#20197;&#21368;&#36733;&#36825;&#20010;&#25193;&#23637;&#12290;">
+<!ENTITY note2.text "&#35831;&#27880;&#24847;&#65306;&#19981;&#26159;&#25152;&#26377;&#30340;JPEG&#25991;&#20214;&#37117;&#21253;&#21547;Exif&#25968;&#25454;&#12290;&#19968;&#33324;&#24773;&#20917;&#19979;&#65292;&#24456;&#22810;&#22270;&#20687;&#25991;&#20214;&#32534;&#36753;/&#22788;&#29702;&#36719;&#20214;&#19981;&#20250;&#20445;&#30041;&#27492;&#25968;&#25454;&#65292;&#21738;&#24597;&#21482;&#26159;&#23545;&#22270;&#20687;&#20570;&#20102;&#36731;&#24494;&#30340;&#20462;&#25913;&#12290;&#36825;&#20063;&#35299;&#37322;&#20102;Exif Viewer&#22312;&#25171;&#24320;&#24456;&#22810;&#26412;&#22320;&#25110;&#36828;&#31243;&#25991;&#20214;&#26102;&#20250;&#25253;&#21578;&#8220;&#26080;&#27861;&#25552;&#21462;&#20840;&#37096;Exif&#25968;&#25454;&#8221;&#30340;&#21407;&#22240;&#12290;&#22312;&#26576;&#20123;&#24773;&#20917;&#19979;&#65292;&#24744;&#21487;&#22312;&#24744;&#30340;&#22270;&#20687;&#36719;&#20214;&#35774;&#23450;&#20013;&#25171;&#24320;&#8220;&#20445;&#30041;Exif&#25968;&#25454;&#8221;&#35774;&#23450;/&#36873;&#39033;&#12290;">
+<!ENTITY note3.text "&#35831;&#27880;&#24847;&#65306;&#20010;&#20154;&#25110;&#20225;&#19994;&#38450;&#28779;&#22681;&#35774;&#32622;&#25110;&#35768;&#20250;&#38459;&#25318;Exif Viewer&#27983;&#35272;&#36828;&#31243;&#25991;&#20214;&#65292;&#34920;&#29616;&#20026;&#25554;&#20214;&#20572;&#27490;&#21709;&#24212;&#12290;&#22312;&#26597;&#30475;&#36828;&#31243;JPEG&#30340;Exif&#25968;&#25454;&#26102;&#35831;&#20808;&#30830;&#20445;Firefox&#26377;&#32593;&#32476;&#35775;&#38382;&#26435;&#38480;&#12290;">  
+<!ENTITY makernote.label "&#26174;&#31034;&#21046;&#36896;&#21830;&#35828;&#26126;&#20449;&#24687;(&#22914;&#21487;&#29992;)">
+<!ENTITY image.label "&#19981;&#26174;&#31034;&#22270;&#20687;">
+<!ENTITY tables.label "&#20351;&#29992;&#34920;&#26684;&#26174;&#31034;&#25968;&#25454;">
+<!ENTITY tags.label "&#26174;&#31034;EXIF&#36523;&#20221;&#35777;&#21495;&#30721;">
+<!ENTITY basic.label "&#21482;&#26174;&#31034;&#22522;&#26412;&#20449;&#24687;">
+<!ENTITY example.url "http://www.steves-digicams.com/2006_reviews/a700/samples/img_0003.jpg">
+<!ENTITY ready.text "&#23601;&#32490;">
+<!ENTITY nofile.text "&example.url;">
+<!--<!ENTITY nofile.text "(&#26410;&#36873;&#25321;&#25991;&#20214;)">-->
+<!ENTITY about.text "Exif Viewer v2.00 (22 &#20843;&#26376; 2012)\n
+\n
+&#25552;&#21462;&#24182;&#26174;&#31034;&#26412;&#22320;&#25110;&#36828;&#31243;JPEG&#22270;&#20687;&#20013;&#30001;&#25968;&#30721;&#29031;&#30456;&#26426;&#20445;&#23384;&#30340;Exif(&#21487;&#20132;&#25442;&#22270;&#20687;&#25991;&#20214;)&#65292;IPTC-NAA/IIM(&#22269;&#38469;&#26032;&#38395;&#30005;&#20449;&#29702;&#20107;&#20250;/&#32654;&#22269;&#25253;&#19994;&#21327;&#20250;/&#20449;&#24687;&#20132;&#25442;&#27169;&#22411;)&#12290;&#21516;&#26102;&#23558;&#8220;&#26597;&#30475;Exif&#25968;&#25454;&#8221;&#26465;&#30446;&#28155;&#21152;&#21040;&#27983;&#35272;&#22120;&#30340;&#8220;&#38142;&#25509;&#8221;&#21644;&#8220;&#22270;&#20687;&#8221;&#29615;&#22659;(&#21491;&#38190;&#24377;&#20986;)&#33756;&#21333;&#20013;&#65292;&#20351;&#35843;&#29992;Exif Viewer&#21464;&#24471;&#26356;&#23481;&#26131;&#12290;\n
+\n
+&#30001;Alan Raskin&#32534;&#20889;\n
+asraskin@gmail.com">
+<!ENTITY help.text "&#26412;&#25193;&#23637;&#25552;&#21462;&#24182;&#26174;&#31034;&#25968;&#30721;&#29031;&#30456;&#26426;&#23884;&#20837;&#21040;JPEG&#25991;&#20214;&#20013;&#30340;&#19968;&#20123;&#20449;&#24687;(&#30456;&#26426;&#21450;&#29031;&#29255;&#35774;&#23450;&#12289;&#21487;&#29992;&#30340;GPS&#20449;&#24687;&#31561;&#31561;)&#12290;\n
+\n
+&#36825;&#20123;&#20449;&#24687;&#34987;&#20648;&#23384;&#22312;&#26681;&#25454;TIFF&#35268;&#33539;&#23450;&#20041;&#30340;&#8220;&#21487;&#20132;&#25442;&#22270;&#20687;&#25991;&#20214;&#8221;(Exif)&#26684;&#24335;&#20013;&#12290;EXIF&#21487;&#38468;&#21152;&#22312;JPG&#12289;TIFF&#12289;PNG&#12289;MIFF&#19982;DNG&#22270;&#20687;&#20043;&#20013;&#12290;Exif&#20803;&#25968;&#25454;&#20449;&#24687;&#22312;&#22270;&#20687;&#20013;&#20197;&#19981;&#21516;&#30340;&#22270;&#20687;&#25991;&#26723;&#32534;&#38598;&#26041;&#24335;(IFDs)&#32452;&#32455;&#65307;&#21046;&#36896;&#21830;&#20063;&#21487;&#23558;&#20449;&#24687;&#21253;&#21547;&#22312;&#8220;&#21046;&#36896;&#21830;&#35828;&#26126;&#8221;&#23383;&#27573;&#20013;&#12290;\n
+\n
+Exif Viewer&#36890;&#36807;Exif2.2&#26631;&#20934;&#26469;&#35299;&#37322;&#23384;&#20648;&#30340;&#20449;&#24687;&#65292;&#24182;&#21516;&#26102;&#21487;&#33719;&#21462;&#22810;&#20010;&#21378;&#21830;&#30340;&#21046;&#36896;&#21830;&#35828;&#26126;&#12290;&#26356;&#22810;&#30340;&#21378;&#21830;&#21644;&#30446;&#21069;&#25903;&#25345;&#21378;&#21830;&#30340;&#26356;&#35814;&#32454;&#30340;&#20449;&#24687;&#20250;&#22312;&#23558;&#26469;&#30340;&#29256;&#26412;&#20013;&#21152;&#20837;&#12290;\n
+\n
+Exif Viewer&#20174;&#24744;&#36755;&#20837;&#30340;&#26412;&#22320;&#30828;&#30424;&#25110;&#36828;&#31243;&#19975;&#32500;&#32593;&#26381;&#21153;&#22120;&#19978;&#30340;&#22270;&#20687;&#25991;&#20214;&#20013;&#35835;&#21462;&#20449;&#24687;&#65292;&#24182;&#23558;&#32467;&#26524;&#22312;&#24744;&#30340;&#31995;&#32479;&#19978;&#26174;&#31034;&#20986;&#26469;&#12290;&#27809;&#26377;&#35835;&#21462;&#20854;&#23427;&#20449;&#24687;&#65292;&#20063;&#27809;&#26377;&#20219;&#20309;&#20449;&#24687;&#21457;&#36865;&#32473;&#25105;&#25110;&#20219;&#20309;&#20154;&#12290;&#22914;&#26524;&#24744;&#24895;&#24847;&#65292;&#21487;&#20197;&#26816;&#26597;&#28304;&#20195;&#30721;&#12290;">
+<!ENTITY makers.text "&#20197;&#19979;&#21378;&#21830;&#30340;&#21046;&#36896;&#21830;&#35828;&#26126;&#26368;&#23569;&#26377;&#37096;&#20998;&#26159;&#21487;&#29992;&#30340;&#65306;\n
+\n
+Canon&#20339;&#33021;&#12289;Casio&#21345;&#35199;&#27431;&#12289;Fujifilm&#23500;&#22763;&#12289;Nikon&#23612;&#24247;&#12289;Olympus&#22885;&#26519;&#24052;&#26031;&#12289;&#21644;Panasonic&#26494;&#19979;\n
+\n
+&#20854;&#23427;&#21046;&#36896;&#21830;&#20250;&#22312;&#23558;&#26469;&#30340;&#29256;&#26412;&#20013;&#21152;&#20837;&#12290;">
+<!ENTITY notes.title.text "Exif Viewer&#21457;&#24067;&#35828;&#26126;">
+<!ENTITY notes.close.label "&#20851;&#38381;">
+<!ENTITY languages.text "&#22914;&#26524;&#24744;&#24819;&#24110;&#24537;&#23558;&#29992;&#25143;&#30028;&#38754;(&#21644;&#23454;&#38469;&#30340;Exif&#25968;&#25454;&#20449;&#24687;)&#25991;&#26412;&#32763;&#35793;&#21040;&#33521;&#25991;&#20197;&#22806;&#30340;&#35821;&#35328;&#65292;&#35831;&#21457;&#37038;&#20214;&#21040;asraskin@gmail.com&#32852;&#31995;&#25105;&#12290;\n
+\n
+&#20013;&#25991;&#35821;&#35328;&#30028;&#38754;&#21644;EXIF&#25968;&#25454;&#20449;&#24687;&#32763;&#35793;&#30340;&#20462;&#25913;&#24314;&#35758;&#65292;&#35831;&#21457;&#37038;&#20214;&#21040;magicnight@gmail.com&#12290;">
+<!ENTITY key.copy "c">
+<!ENTITY key.console "e">
+<!ENTITY key.filepick "o">
+<!ENTITY key.exit "x">
+<!ENTITY key.about "a">
+<!ENTITY key.copyhtml "h">
+<!ENTITY key.languages "l">
+<!ENTITY key.maker "m">
+<!ENTITY key.releasenotes "r">
+<!ENTITY key.exit2 "w">
+<!ENTITY key.enlarge "+">
+<!ENTITY key.enlarge2 "=">
+<!ENTITY key.reduce "-">
+<!ENTITY key.normal "0">
+
+<!--
+<!ENTITY key. "">
+<!ENTITY key. "">
+<!ENTITY key. "">
+-->
+
+<!ENTITY menu.file.label "&#25991;&#20214;">
+<!ENTITY menu.file.access "F">
+	<!ENTITY menu.file.open.label "&#25171;&#24320;&#8230;">
+	<!ENTITY menu.file.open.access "O">
+	<!ENTITY menu.file.print.label "&#25171;&#21360;">
+	<!ENTITY menu.file.print.access "P">
+	<!ENTITY menu.file.history-loc.label "History (local)">
+	<!ENTITY menu.file.history-loc.access "l">
+		<!ENTITY menu.file.history-loc.clear.label "Clear Local History">
+		<!ENTITY menu.file.history-loc.clear.access "C">
+	<!ENTITY menu.file.history-rem.label "History (remote)">
+	<!ENTITY menu.file.history-rem.access "H">
+		<!ENTITY menu.file.history-rem.clear.label "Clear Remote History">
+		<!ENTITY menu.file.history-rem.clear.access "C">
+	<!ENTITY menu.file.close.label "&#20851;&#38381;">
+	<!ENTITY menu.file.close.access "C">
+	<!ENTITY menu.file.exit.label "&#36864;&#20986;">
+	<!ENTITY menu.file.exit.access "x">
+<!ENTITY menu.edit.label "&#32534;&#36753;">
+<!ENTITY menu.edit.access "e">
+	<!ENTITY menu.edit.copy.label "&#22797;&#21046;">
+	<!ENTITY menu.edit.copy.access "C">
+	<!ENTITY menu.edit.copyhtml.label "&#20197;HTML&#22797;&#21046;">
+	<!ENTITY menu.edit.copyhtml.access "H">
+	<!ENTITY menu.edit.selectall.label "&#20840;&#36873;">
+	<!ENTITY menu.edit.selectall.access "S">
+<!ENTITY menu.view.label "&#26597;&#30475;&#8230;">
+<!ENTITY menu.view.access "V">	
+	<!ENTITY menu.view.console.label "&#20999;&#25442;&#26174;&#31034;&#25511;&#21046;&#20449;&#24687;">
+    <!ENTITY menu.view.console.access "C">
+	<!ENTITY menu.view.ifd0.label "IFD0">
+	<!ENTITY menu.view.ifd0.access "0">
+	<!ENTITY menu.view.subifd.label "Sub IFD">
+	<!ENTITY menu.view.subifd.access "S">
+	<!ENTITY menu.view.ifd1.label "IFD1">
+	<!ENTITY menu.view.ifd1.access "1">
+	<!ENTITY menu.view.interop.label "Interop IFD">
+	<!ENTITY menu.view.interop.access "I">
+	<!ENTITY menu.view.gpsifd.label "GPS IFD">
+	<!ENTITY menu.view.gpsifd.access "G">
+	<!ENTITY menu.view.iptc.label "IPTC">
+	<!ENTITY menu.view.iptc.access "P">
+	<!ENTITY menu.view.iptc_core.label "IPTC Core">
+	<!ENTITY menu.view.iptc_core.access "T">
+	<!ENTITY menu.view.maker.label "&#21046;&#36896;&#21830;&#35828;&#26126;">
+	<!ENTITY menu.view.maker.access "M">
+	<!ENTITY menu.view.size.label "&#25991;&#26412;&#22823;&#23567;">
+	<!ENTITY menu.view.size.access "z">
+		<!ENTITY menu.view.size.largest.label "&#26368;&#22823;">
+		<!ENTITY menu.view.size.largest.access "g">
+		<!ENTITY menu.view.size.larger.label "&#26356;&#22823;">
+		<!ENTITY menu.view.size.larger.access "L">
+		<!ENTITY menu.view.size.medium.label "&#20013;&#31561;">
+		<!ENTITY menu.view.size.medium.access "M">
+		<!ENTITY menu.view.size.smaller.label "&#31245;&#23567;">
+		<!ENTITY menu.view.size.smaller.access "S">
+		<!ENTITY menu.view.size.smallest.label "&#26368;&#23567;">
+		<!ENTITY menu.view.size.smallest.access "a">
+		<!ENTITY menu.view.size.increase.label "&#22686;&#21152;">
+		<!ENTITY menu.view.size.increase.access "I">
+		<!ENTITY menu.view.size.decrease.label "&#20943;&#23569;">
+		<!ENTITY menu.view.size.decrease.access "D">
+		<!ENTITY menu.view.size.normal.label "&#27491;&#24120;">
+		<!ENTITY menu.view.size.normal.access "N">
+<!ENTITY menu.scroll.label "&#28378;&#21160;&#21040;&#8230;">
+<!ENTITY menu.scroll.access "S">
+	<!ENTITY menu.scroll.ifd0.label "IFD0">
+	<!ENTITY menu.scroll.ifd0.access "0">
+	<!ENTITY menu.scroll.subifd.label "Sub IFD">
+	<!ENTITY menu.scroll.subifd.access "S">
+	<!ENTITY menu.scroll.ifd1.label "IFD1">
+	<!ENTITY menu.scroll.ifd1.access "1">
+	<!ENTITY menu.scroll.interop.label "Interop IFD">
+	<!ENTITY menu.scroll.interop.access "I">
+	<!ENTITY menu.scroll.gpsifd.label "GPS IFD">
+	<!ENTITY menu.scroll.gpsifd.access "G">
+	<!ENTITY menu.scroll.iptc.label "IPTC">
+	<!ENTITY menu.scroll.iptc.access "P">
+	<!ENTITY menu.scroll.iptc_core.label "IPTC Core">
+	<!ENTITY menu.scroll.iptc_core.access "T">
+	<!ENTITY menu.scroll.maker.label "&#21046;&#36896;&#21830;&#35828;&#26126;">
+	<!ENTITY menu.scroll.maker.access "M">
+<!ENTITY menu.tools.label "&#24037;&#20855;">
+<!ENTITY menu.tools.access "T">
+	<!ENTITY menu.tools.console.label "&#38169;&#35823;/JavaScript&#25511;&#21046;&#21488;">
+	<!ENTITY menu.tools.console.access "C">
+<!ENTITY menu.help.label "&#24110;&#21161;">
+<!ENTITY menu.help.access "H">
+	<!ENTITY menu.help.help.label "&#24110;&#21161;">
+	<!ENTITY menu.help.help.access "e">
+	<!ENTITY menu.help.about.label "&#20851;&#20110; Exif Viewer">
+	<!ENTITY menu.help.about.access "A">
+	<!ENTITY menu.help.maker.label "&#21046;&#36896;&#21830;&#35828;&#26126;">
+	<!ENTITY menu.help.maker.access "M">
+	<!ENTITY menu.help.notes.label "&#21457;&#24067;&#35828;&#26126;">
+	<!ENTITY menu.help.notes.access "R">
+	<!ENTITY menu.help.languages.label "&#35821;&#35328;">
+	<!ENTITY menu.help.languages.access "L">
+
+<!ENTITY popup.copy.label "&#22797;&#21046;">
+<!ENTITY popup.copy.access "C">
+<!ENTITY popup.copyhtml.label "&#20197;HTML&#22797;&#21046;">
+<!ENTITY popup.copyhtml.access "H">
+<!ENTITY popup.ifd0.label "IFD0">
+<!ENTITY popup.ifd0.access "0">
+<!ENTITY popup.subifd.label "Sub IFD">
+<!ENTITY popup.subifd.access "S">
+<!ENTITY popup.ifd1.label "IFD1">
+<!ENTITY popup.ifd1.access "1">
+<!ENTITY popup.interop.label "Interop IFD">
+<!ENTITY popup.interop.access "I">
+<!ENTITY popup.gpsifd.label "GPS IFD">
+<!ENTITY popup.gpsifd.access "G">
+<!ENTITY popup.iptc.label "IPTC">
+<!ENTITY popup.iptc.access "P">
+<!ENTITY popup.iptc_core.label "IPTC Core">
+<!ENTITY popup.iptc_core.access "T">
+<!ENTITY popup.maker.label "&#21046;&#36896;&#21830;&#35828;&#26126;">
+<!ENTITY popup.maker.access "M">
+<!--
+<!ENTITY menu..label "">
+<!ENTITY menu..access "">
+-->

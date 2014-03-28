@@ -1,0 +1,32 @@
+These preferences will make debugging easier at the expense of lower performance.
+The first two need to be toggled, the last two need to be created.
+
+about:config
+
+* javascript.options.showInConsole = true. Logs errors in chrome files to the 
+  JavaScript Console.
+* javascript.options.strict = true. Enables strict Javascript warnings in the 
+  JavaScript Console. Note that since many people have this setting turned off 
+  when developing, you will see lots of warnings for problems with their code in 
+  addition to warnings for your own extension.
+* nglayout.debug.disable_xul_cache = true. Disables the XUL cache so that changes 
+  to windows and dialogs do not require a restart. This assumes you're using 
+  directories rather than JARs. Changes to XUL overlays will still require 
+  reloading of the document overlaid.
+* browser.dom.window.dump.enabled = true. Enables the use of the dump() statement 
+  to print to the standard console. See window.dump for more info. You can also 
+  use nsIConsoleService from privileged script.
+
+
+This preference will disable the compatibility (version) checking for extensions (may not worker for more recent browser versions):
+
+* right click the list and create a boolean extensions.checkCompatibility option,
+  then set its value to false and restart the browser.
+
+
+DTD and PROPERTIES files
+
+* don't like accented characters
+* don't like special characters (curly quotes, ellipsis, ampersand, degree
+* beware of ".> (instead of .">)
+* beware of " inside quoted strings

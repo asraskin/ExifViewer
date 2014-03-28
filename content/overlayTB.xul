@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://exif/skin/overlay.css" type="text/css"?>
+<!DOCTYPE overlay SYSTEM "chrome://exif/locale/overlay.dtd">
+<overlay id="exifviewer-overlay"
+    xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+	<!-- Thunderbird: -->
+
+	<menupopup id="taskPopup">
+		<menuitem id="exifviewer-exif-tb" label="&exifviewer;" oncommand="AlanSRaskin.ExifViewer.Overlay.ExifViewer.onMenuItemCommand(event);"/>
+	</menupopup>
+	
+	<popup id="messagePaneContext">
+		<menuitem id="context-item-link-exif-tb" label="&exifviewerlink;" oncommand="AlanSRaskin.ExifViewer.Overlay.handleExifImagePicked(gContextMenu.linkURL());"/>
+		<menuitem id="context-item-image-exif-tb" label="&exifviewerimage;" oncommand="AlanSRaskin.ExifViewer.Overlay.handleExifAttachmentPicked(gContextMenu.imageURL);"/>
+	</popup>
+
+	<popup id="attachmentListContext">
+		<menuitem id="context-item-attachment-exif-tb" label="&exifviewerattach;" oncommand="AlanSRaskin.ExifViewer.Overlay.handleExifAttachmentPicked()"/>
+	</popup>
+
+	<script src="overlay.js"/>
+</overlay> 

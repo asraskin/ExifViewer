@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://exif/skin/overlay.css" type="text/css"?>
+<!DOCTYPE overlay SYSTEM "chrome://exif/locale/overlay.dtd">
+<overlay id="exifviewer-overlay"
+    xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+	<!-- Firefox: -->
+
+	<menupopup id="menu_ToolsPopup">
+		<menuitem id="exifviewer-exif" label="&exifviewer;"	oncommand="AlanSRaskin.ExifViewer.Overlay.ExifViewer.onMenuItemCommand(event);"/>
+	</menupopup>
+	
+	<popup id="contentAreaContextMenu">
+		<menuitem id="context-item-link-exif" label="&exifviewerlink;" oncommand="AlanSRaskin.ExifViewer.Overlay.handleExifImagePicked(gContextMenu.linkURL);" insertafter="context-copylink"/>
+		<menuitem id="context-item-image-exif" label="&exifviewerimage;" oncommand="AlanSRaskin.ExifViewer.Overlay.handleExifImagePicked(gContextMenu.imageURL);" insertafter="context-copyimage"/>
+		<menuitem id="context-item-rotate-image-exif" label="&exifviewerimagerotate;" oncommand="AlanSRaskin.ExifViewer.Overlay.handleExifRotateImage(gContextMenu.imageURL);" insertafter="context-copyimage"/>
+		<menuitem id="context-item-rotate-link-image-exif" label="&exifviewerlinkrotate;" oncommand="AlanSRaskin.ExifViewer.Overlay.handleExifRotateImage(gContextMenu.linkURL);" insertafter="context-copylink"/>
+	</popup>
+	
+	<script src="overlay.js"/>
+</overlay> 

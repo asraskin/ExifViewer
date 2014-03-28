@@ -1,0 +1,66 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"> 
+<title>Image Exif Data Viewer</title>
+<script type="text/javascript" src="exif.js"></script>
+<script type="text/javascript" src="exif_ie.js"></script>
+<script type="text/javascript" src="exif_tags.js"></script>
+<script type="text/javascript" src="exif_makers.js"></script>
+<script type="text/javascript" src="exif_agfa.js"></script>
+<script type="text/javascript" src="exif_canon.js"></script>
+<script type="text/javascript" src="exif_casio.js"></script>
+<script type="text/javascript" src="exif_epson.js"></script>
+<script type="text/javascript" src="exif_fujifilm.js"></script>
+<script type="text/javascript" src="exif_konica_minolta.js"></script>
+<script type="text/javascript" src="exif_kyocera_contax.js"></script>
+<script type="text/javascript" src="exif_nikon.js"></script>
+<script type="text/javascript" src="exif_olympus.js"></script>
+<script type="text/javascript" src="exif_panasonic.js"></script>
+<script type="text/javascript" src="exif_pentax_asahi.js"></script>
+<script type="text/javascript" src="exif_ricoh.js"></script>
+<script type="text/javascript" src="exif_sanyo.js"></script>
+<script type="text/javascript" src="exif_sony.js"></script>
+<script type="text/javascript" src="exif_generic.js"></script>
+<script type="text/javascript" src="exif_iptc.js"></script>
+<script type="text/javascript" src="exif_xml.js"></script>
+<script type="text/javascript">
+AlanSRaskin.ExifViewer.Base.exifasr_isMoz = false;
+AlanSRaskin.ExifViewer.Base.exifasr_xml0 = exifasr_xml1 = '';
+var testFileName = window.location.pathname.replace(/[^\\\/]*.html/, 'exif_test.in').replace(/^\//, '').replace(/%20/g, ' ');
+//alert(testFileName);
+</script>
+<style type="text/css">
+	body { font-family:sans-serif; }
+</style>
+</head>
+<body>
+<h1>Exif Data Extractor</h1>
+
+<p>Please select a local image.</p>
+
+<form>
+<div style="float:left">
+<input type="file" name="file" onChange="document.getElementById('fileDiv').innerHTML=this.value;"><br>
+<span id="fileDiv" style="clear:both"></span><br>
+<input type="checkbox" name="maker" value="suppress" id="maker"> <label for="maker">Suppress Maker Note information (if applicable)?</label>
+</div>
+<div style="float:left">
+<input type="button" value="View Exif Data" onClick="AlanSRaskin.ExifViewer.Base.clearTexts('outputDiv');AlanSRaskin.ExifViewer.Base.processFile(this.form.elements['file'].value, testFileName, 'outputDiv', this.form.elements['maker'].checked, false);">
+<input type="button" value="View Orientation" onClick="alert(AlanSRaskin.ExifViewer.Base.getOrientation(this.form.elements['file'].value, testFileName, 'outputDiv', false))">
+</div>
+</form>
+<div id="outputDiv" style="clear:both">
+	<div id="outputDiv_head"></div>
+	<div id="outputDiv_ifd0"></div>
+	<div id="outputDiv_subifd"></div>
+	<div id="outputDiv_ifd1"></div>
+	<div id="outputDiv_mn"></div>
+	<div id="outputDiv_iop"></div>
+	<div id="outputDiv_gps"></div>
+	<div id="outputDiv_iptc"></div>
+	<div id="outputDiv_iptc_core"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<RDF:RDF xmlns:em="http://www.mozilla.org/2004/em-rdf#"
+		 xmlns:NC="http://home.netscape.com/NC-rdf#"
+		 xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+	<RDF:Description RDF:about="urn:mozilla:install-manifest"
+				   em:id="exif_viewer@mozilla.doslash.org"
+				   em:name="Exif Viewer"
+				   em:version="2.00"
+				   em:type="2"
+				   em:description="Extracts and displays the Exif (Exchangeable Image File), IPTC-NAA/IIM (International Press Telecommunications Council / Newspaper Association of America / Information Interchange Model), and IPTC Core (Adobe XMP, Extensible Metadata Platform) metadata, as stored by digital still cameras, in both local and remote JPEG images."
+				   em:creator="Alan Raskin, asraskin@gmail.com"
+				   em:homepageURL="http://araskin.webs.com/exif/exif.html">
+		<em:targetApplication RDF:resource="rdf:#$p+bJJ3"/>
+		<em:targetApplication RDF:resource="rdf:#$u+bJJ3"/>
+		<em:localized>
+			<Description>
+				<em:locale>pt-BR</em:locale>
+				<em:name>Exif Viewer</em:name>
+				<em:description>Extrai e exibe metadados Exif (Arquivo de Imagem Intercambi&#225;vel), IPTC&#45;NAA&#47;IIM (Conselho de Telecomunica&#231;&#245;es e Imprensa Internacional &#47; Associa&#231;&#227;o Jornal&#237;stica da Am&#233;rica &#47; Modelo de Interc&#226;mbio de Informa&#231;&#227;o) e de N&#250;cleo IPTC (XMP, Plataforma de Metadados Extens&#237;vel da Adobe) como armazenados por c&#226;meras digitais, em imagens JPEG locais e remotas.</em:description>
+			</Description>
+		</em:localized>
+	</RDF:Description>
+	<RDF:Description RDF:about="rdf:#$u+bJJ3"
+				   em:id="{3550f703-e582-4d05-9a08-453d09bdfdc6}"
+				   em:minVersion="1.5"
+				   em:maxVersion="17.*" /><!-- Thunderbird (should be 2.0.0.*) -->
+        <RDF:Description RDF:about="rdf:#$p+bJJ3"
+				   em:id="{ec8030f7-c20a-464f-9b0e-13a3a9e97384}"
+				   em:minVersion="1.5.0.*"
+				   em:maxVersion="21.*" /><!-- Firefox (was 3.5.* or 3.6.0) -->
+<!--        <RDF:Description RDF:about="rdf:#$p+bJJ3"
+				   em:id="{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}"
+				   em:minVersion="2.0.*"
+				   em:maxVersion="2.13.*" />--><!-- Seamonkey (not verified) -->
+	<em:targetApplication>
+		<!-- Postbox -->
+		<Description>
+			<em:id>postbox@postbox-inc.com</em:id>
+			<em:minVersion>1.1.5</em:minVersion>
+			<em:maxVersion>2.*.*</em:maxVersion>
+		</Description>
+	</em:targetApplication>
+</RDF:RDF>

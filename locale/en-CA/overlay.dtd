@@ -1,0 +1,6 @@
+<!ENTITY exifviewer "Exif Viewer">
+<!ENTITY exifviewerlink "View Link EXIF Data">
+<!ENTITY exifviewerimage "View Image EXIF Data">
+<!ENTITY exifviewerattach "View Attachment EXIF Data">
+<!ENTITY exifviewerlinkrotate "View Rotated Link Image (Exif)">
+<!ENTITY exifviewerimagerotate "View Rotated Image (Exif)">
